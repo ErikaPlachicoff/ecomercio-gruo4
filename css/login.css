@@ -88,11 +88,26 @@ body {
  .form-grup {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    height: 300px;
+    height: 260px;
     width: 420px;
     margin-top: 120px;
     border-radius: 10px;
     margin-bottom: 0px;
+ }
+/* Alinea el checkbox y el texto en la misma línea */
+.form-check {
+   display: flex;
+   align-items: center;
+ }
+ 
+ /* Añade un pequeño margen a la izquierda del texto */
+ .form-check-label {
+   margin-left: 5px;
+ }
+ 
+ /* Ajusta la posición del botón */
+ button[type="submit"] {
+   margin-top: 10px; /* Puedes ajustar este valor según lo necesites */
  }
  
  
@@ -114,6 +129,7 @@ body {
  
  .login-container input[type="checkbox"] {
     margin-right: 10px;
+    margin-bottom: 20px;
  }
  
  
