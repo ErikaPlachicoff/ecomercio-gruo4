@@ -1,159 +1,67 @@
+
 body {
-    display: flex;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color:rgba(255, 255, 255, 1);
+    ;
     margin: 0;
-    font-family: 'Jura', sans-serif;
-    background-image:url(../img/fondo\(1\).png);
-    background-size: cover;
-    background-position: center;
- }
- 
- 
- .logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 3;
- }
- 
- 
- .logo img {
-    width: 300px;
-    height: auto;
- }
- 
- 
- .fondo-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-left: 40%;
-    height: 100vh;
-    width: 60%;
-    overflow: hidden;
- }
- 
- 
- .fondo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
- }
- 
- 
- .img-tienda-virtual {
-    position: absolute;
-    top: 60%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
- }
- 
- 
- .img-tienda-virtual img {
+    width: Fixed (1,440px)px;
+height: Fixed (3,193px)px;
+top: -2214px;
+left: 335px;
+padding: 10px 0px 0px 0px;
+gap: 10px;
+opacity: 0px;
+
+}
+
+.container {
     width: 80%;
-    height: auto;
-    opacity: 0.5;
- }
- 
- 
- .login-container {
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    z-index: 3;
-    width: 500px;
-    height: 700px;
-    max-height: 80%;
-    margin-right: 5%;
-    background-color: rgba(255, 255, 255, 0.005);
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
- }
- 
- 
- .login-container h1 {
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
+    color: #333;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
     margin-bottom: 20px;
-    font-size: 60px;
-    color: #171817;
-    margin-top: 20px;
- }
- .login-container{
-    background-color: rgba(255, 255, 255, 0.9);
- }
- .form-grup {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    height: 260px;
-    width: 420px;
-    margin-top: 120px;
-    border-radius: 10px;
-    margin-bottom: 0px;
- }
-/* Alinea el checkbox y el texto en la misma línea */
-.form-check {
-   display: flex;
-   align-items: center;
- }
- 
- /* Añade un pequeño margen a la izquierda del texto */
- .form-check-label {
-   margin-left: 5px;
- }
- 
- /* Ajusta la posición del botón */
- button[type="submit"] {
-   margin-top: 10px; /* Puedes ajustar este valor según lo necesites */
- }
- 
- 
- .login-container form p {
-    margin-top: 0%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.price {
+    font-size: 1.2em;
     font-weight: bold;
- }
- 
- 
- .login-container input[type="text"],
- .login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
+    color: #333;
+}
+
+.sold, .color, .description, .shipping {
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
- }
- 
- 
- .login-container input[type="checkbox"] {
-    margin-right: 10px;
-    margin-bottom: 20px;
- }
- 
- 
- .login-container label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
- }
- 
- 
- .login-container input[type="submit"] {
-    width: 100%;
-    padding: 10px;
+    color: #666;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    background-color: #171817;
-    color: white;
-    font-size: 16px;
     cursor: pointer;
-    margin-bottom: 20%;
- }
- 
- 
- .login-container input[type="submit"]:hover {
-    background-color: #fdfffd;
- }
- 
+    font-size: 1em;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
