@@ -1,0 +1,52 @@
+/* Rectangulo colores izq */
+.rectangulo {
+position: absolute;
+width: 342px;
+height: 1475px;
+left: 95px;
+top: 369px;
+
+background: rgba(134, 150, 191, 1);
+
+mix-blend-mode: soft-light;
+box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.2s; /* Efecto de transición */
+    background: #9BA4C1;
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+}
+
+  
+.card:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+}
+  
+.card-img-top {
+    border-top-left-radius: 15px; /* Bordes redondeados en la imagen */
+    border-top-right-radius: 15px;
+}
+  
+.card-body {
+    text-align: center; /* Centrar el texto */
+    padding: 1rem; /* Opcional: espacio interno */
+}
+  
+#product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre las tarjetas */
+  
+    overflow-y: auto; /* Hacer scroll si hay muchas tarjetas */
+    padding: 1rem; /* Opcional: espacio interno */
+}
