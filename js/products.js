@@ -13,17 +13,20 @@ document.addEventListener("DOMContentLoaded", function() {
         // Recorre cada producto y crea el HTML correspondiente
         result.data.products.forEach(product => {
           const productElement = document.createElement('div'); // en html dentro del id product-list creamos un nuevo contenedor 
-          productElement.classList.add('col-4'); // damos estilo al contenedor creado. col-md-4 ayuda a organizar los productos en columnas
+          productElement.classList.add('col-md-4'); // damos estilo al contenedor creado. col-md-4 ayuda a organizar los productos en columnas
           productElement.innerHTML = ` 
-            <div class="card mb-4">
-              <img src="${product.image}" class="card-img-top" alt="${product.name}">
-              <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">${product.description}</p>
-                <p class="card-text"><strong>Precio:</strong> ${product.currency} ${product.cost}</p>
-                <p class="card-text"><strong>Vendidos:</strong> ${product.soldCount}</p>
-              </div>
-            </div>
+           <div class="card mb-3" style="width: 20rem;">
+                      <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                      <div class="card-body">
+                        <h5 class="card-title"><strong>${product.name}</strong></h5>
+                        <p class="card-text">${product.description}</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Precio:</strong> ${product.currency} ${product.cost}</li>
+                        <li class="list-group-item"><strong>Vendidos:</strong> ${product.soldCount}</li>
+                      </ul>
+                     
+                    </div>
           `; // manipulamos el html dentro de un elemento. Agregamos imagen, nombre, descripcion, etc.. 
           productList.appendChild(productElement); //Añade productElement en a la lista de productos en la página->productList.
         });
