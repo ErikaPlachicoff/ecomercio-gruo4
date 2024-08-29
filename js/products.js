@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function() {
+
   const spinner = document.getElementById('spinner-wrapper');
   const productList = document.getElementById('product-list');
   const PRODUCTS_URL = 'https://japceibal.github.io/emercado-api/cats_products/101.json';
