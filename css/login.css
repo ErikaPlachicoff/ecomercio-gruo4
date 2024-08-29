@@ -1,17 +1,44 @@
 .gradient-custom-2 {
    /* fallback for old browsers */
-   background: #fccb90;
+   background-image: url(../img/img_para_login.png) !important;
+   background-repeat: no-repeat !important;
+   background-size: cover !important;
    
-   /* Chrome 10-25, Safari 5.1-6 */
-   background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
    
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+   }
+   
+   h1 {
+    font-family:'Press Start 2P'; 
+   
+   }
+
+   #ingrese  {
+    background-color: rgb(121, 114, 160) !important;
+    color: #fff !important;
+    border: #fff !important;
+   }
+   #registro {
+    background-color:rgba(121, 114, 160, 0.356) !important;
+    color: rgba(41, 38, 61, 0.712)!important;
+    border: rgba(41, 38, 61, 0.356) !important;
+   }
+   
+
+   button:hover{
+     transform: scale(1.05); 
    }
    
    @media (min-width: 768px) {
    .gradient-form {
    height: 100vh !important;
+   }
+   h1{
+   /* justify-content: center !important;
+    text-align: center  !important;*/
+    padding-left: 0.25rem; /* Padding horizontal izquierdo */
+    padding-right: 0.25rem; /* Padding horizontal derecho */
+    padding-top: 1.5rem; /* Padding vertical superior */
+    padding-bottom: 1.5rem; /* Padding vertical inferior */
    }
    }
    @media (min-width: 769px) {
@@ -25,4 +52,5 @@
       .col-lg-6 {
          display: none;
      }
+         px-1 py-4 p-md-5
    }*/
