@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
   const spinner = document.getElementById('spinner-wrapper');
   const productList = document.getElementById('product-list'); 
