@@ -14,29 +14,54 @@
 </head>
  
 <body>
-  <!--Imagenes de fondo y logo-->
-  <div class="fondo-container">
-    <img src="https://res.cloudinary.com/dm1gsxyaw/image/upload/v1723675892/Screenshot_from_2024-08-14_19-29-42_2_wtudvp.png" alt="imagen de fondo">
-  </div>
-  <main class="mt-5">
-    <div class="logo">
-      <img src="img/login-removebg-preview.png" alt="Logo e-commerce">
-    </div>
-    <div class="img-tienda-virtual">
-      <img src="img/ecommerce-marketing 1(1).png" alt="Tienda Virtual">
-    </div>
-    <!-- El formulario de login con campos usuario y contraseña requeridos-->
-    <div class="login-container">
-      <form id="login-form" action="#">
-        <h1>Bienvenidos</h1><br>
-        <div class="form-group">
-          <p>Usuario</p>
-          <input type="text" placeholder="Ingrese su usuario" name="username" id="username" required><br>
-          <p>Contraseña</p>
-          <input type="password" placeholder="Contraseña" name="password" id="password" required><br>
-          <div class="form-group form-check d-flex align-items-center">
-            <input type="checkbox" class="form-check-input" id="rememberMe">
-            <label class="form-check-label ml-2" for="rememberMe">Recordar contraseña</label>
+
+  <section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xl-10">
+          <div class="card rounded-3 text-black">
+            <div class="row g-0">
+              <!-- Columna con el gradiente -->
+              <div class="col-lg-6 d-flex align-items-center gradient-custom-2 order-lg-1">
+                <div class="text-white mx-md-4">
+                  <h1 class="mb-4">Bienvenidos</h1>
+                  <p class="small mb-0">¡Tu e-commerce favorito!</p>
+                </div>
+              </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="card-body p-md-5 mx-md-4">
+                  <div class="text-center">
+                    <img src="img/logo-e-commerce.png"
+                      style="width: 185px;" alt="logo">
+                    
+                  </div>
+                  <form id="login-form" action="#">
+                    <p>Por favor, ingrese a su cuenta</p>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input type="email" id="form2Example11" class="form-control"
+                        placeholder="Usuario" required/>
+          
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                      <input type="password" id="form2Example22" class="form-control" placeholder="Contraseña" required/>
+                      <br>
+                      <a class="text-muted" href="#!">Olvido su contraseña</a>
+                    </div>
+                    
+                      
+                      
+                    </div>
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <div class="d-flex justify-content-center mb-3">
+                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary fa-lg" type="submit" id="ingrese">Ingrese</button>
+                        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger ms-3" id="registro">Crear nuevo Usuario</button>
+                      </div>
+                    </div>
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
