@@ -6,5 +6,5 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     localStorage.setItem('authenticated', 'true');
 
     // Redirigir a la portada
-    window.location.href = "../index.html";
+    window.location.href = "index.html";
 });
