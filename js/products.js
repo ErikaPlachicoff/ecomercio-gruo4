@@ -1,38 +1,41 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-    
-    const PRODUCTS_URL = 'https://japceibal.github.io/emercado-api/cats_products/101.json'; 
 
-    /*Función para hacer una solicitud al API y obtener un 
-    archivo JSON con la información de los productos (autos).*/
+  const spinner = document.getElementById('spinner-wrapper');
+  const productList = document.getElementById('product-list');
+  const PRODUCTS_URL = 'https://japceibal.github.io/emercado-api/cats_products/101.json';
 
-      getJSONData(PRODUCTS_URL).then(function (result) {
-      if (result.status === "ok"){      
-      console.log(result)
-        const productList = document.getElementById('product-list');
-  
-        // Recorre cada producto y crea el HTML correspondiente
-        result.data.products.forEach(product => {
-          const productElement = document.createElement('div'); // en html dentro del id product-list creamos un nuevo contenedor 
-          productElement.classList.add('col-md-4'); // damos estilo al contenedor creado. col-md-4 ayuda a organizar los productos en columnas
-          productElement.innerHTML = ` 
-           <div class="card mb-3" style="width: 20rem;">
-                      <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                      <div class="card-body">
-                        <h5 class="card-title"><strong>${product.name}</strong></h5>
-                        <p class="card-text">${product.description}</p>
-                      </div>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Precio:</strong> ${product.currency} ${product.cost}</li>
-                        <li class="list-group-item"><strong>Vendidos:</strong> ${product.soldCount}</li>
-                      </ul>
-                     
-                    </div>
-          `; // manipulamos el html dentro de un elemento. Agregamos imagen, nombre, descripcion, etc.. 
-          productList.appendChild(productElement); //Añade productElement en a la lista de productos en la página->productList.
-        });
-      }
-      })
-      .catch(error => {
-        console.error('Error al obtener productos:', error); //si algo sale error, lo muestra en la consola
+  // Función para hacer una solicitud al API y obtener un archivo JSON con la información de los productos (autos).
+  getJSONData(PRODUCTS_URL).then(function (result) {
+    if (result.status === "ok") {
+      console.log(result);
+
+      // Recorre cada producto y crea el HTML correspondiente
+      result.data.products.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('col-12', 'col-md-6', 'col-lg-4');
+        productElement.innerHTML = `
+  <div class="card mb-3">
+    <div class="image-container position-relative">
+      <img src="${product.image}" class="card-img-top" alt="${product.name}">
+      <div class="overlay position-absolute bottom-0 start-0 end-0 text-white d-flex flex-column justify-content-center align-items-center">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent border-0 "><strong>Precio:</strong> ${product.currency} ${product.cost}</li>
+          <li class="list-group-item bg-transparent border-0 "><strong>Vendidos:</strong> ${product.soldCount}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title"><strong>${product.name}</strong></h5>
+      <p class="card-text">${product.description}</p>
+    </div>
+  </div>
+`;
+        productList.appendChild(productElement);
       });
-  });
+    }
+  })
+    .catch(error => {
+      console.error('Error al obtener productos:', error);
+    });
+});

@@ -15,37 +15,89 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
+    <!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <div class="container-fluid justify-content-between">
+
+      <!-- Left elements -->
+      <div class="d-flex">
+        <!-- Brand -->
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="index.html">
+          <img
+            src="img/logo-e-commerce.png" 
+            height="100"
+            alt="Logo e-commerce"
+          />
+        </a>
+      </div>      
+      <!-- Left elements -->
+  
+      <!-- Center elements -->
+      <ul class="navbar-nav flex-row d-none d-md-flex">
+        <li class="nav-item mx-5">
+          <a class="nav-link" href="categories.html">
+            <i class="titulos" aria-hidden="true">Categorías</i>
+          </a>
+        </li>
+  
+        <li class="nav-item mx-5">
+          <a class="nav-link" href="index.html">
+            <span> <i class="titulos"> Home </i></span>
+          </a>
+        </li>
+  
+        <li class="nav-item mx-5">
+          <a class="nav-link" href="sell">
+            <i class="titulos" aria-hidden="true"> Vender </i>
+          </a>
+        </li>
+ 
+      </ul>
+
+      <!-- Center elements -->
+  
+      <!-- Right elements -->
+
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+              class="rounded-circle"
+              height="25"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+            />
+            <strong class="d-none d-sm-block ms-3"> xxx@xmail.com</strong>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-1 ms-3">
+          <a class="nav-link" href="cart">
+            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+      <!-- Right elements -->
     </div>
   </nav>
-  <main class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="rectangulo" ></div>
-      </div>
-      <div class="col-md-6" id="product-list">
+  
+   <!-- A partir de aquí viene la imagen principal y productos -->
+
+   <section class="fondo_img_principal">
+    <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
+   </section>
+
+  <main class="container" id="prod_grid">
+    <h2>Descubre nuestros autos</h2>
+    <h4>Autos de alta gama preparados para tus largos viajes.</h4>
+
+      <div class="product">
+       <div class="row" id="product-list">
+
         <!-- Los productos se agregarán aquí -->
-      </div>
+
+         </div>
     </div>
   </main>
   <footer class="text-muted">
