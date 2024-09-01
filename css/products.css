@@ -24,22 +24,29 @@ h2::after {
 }
 
 h4 {
+
     font-size: 1.2rem;
     text-align: center !important;
     padding: 0 3rem 6rem 3rem;
     color: #47475F;
 }
 
-#img_princ {
+
+#img_princ{
     position: relative;
     width: 100%;
     height: 100%;
 }
-
-#navbarDropdownMenuAvatar + span {
-    color: #000; /* Asegúrate de que el color del texto sea visible */
-    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+/*estilos del usuario*/
+#username {
+    color: #fdfdfd; 
 }
+
+/*estilos de flechitas de menu desplegables*/
+.dropdown-toggle::after {
+    color: #fff;
+  }
+
 
 /*Estilo de la tarjeta*/
 
@@ -110,10 +117,13 @@ nav.navbar {
     position: relative !important;
     display: flex !important;
     color: #f3e7e7 !important;
-    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651);
-    padding: 0rem;
+
+    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651); 
+    padding: 0rem !important;
 
 }
+
+
 
 nav.navbar .navbar-nav .nav-link {
     color: #fffefe !important;
@@ -121,12 +131,16 @@ nav.navbar .navbar-nav .nav-link {
 }
 
 nav .navbar-nav .nav-link:hover {
-    color: #212a47 !important;
-    background-color: #8bb8c0;
+
+    color: #212a47 !important; 
+    background-color: #8bb8c0; 
     border-radius: 0.3125rem;
 }
+/*menu hamburguesa */
+.navbar-toggler{
+    color: #fff !important;
+}
 
-/* Para diferentes resoluciones */
 
 /* Ajustes Resolución Estándar */
 
@@ -162,6 +176,7 @@ nav .navbar-nav .nav-link:hover {
         object-fit: cover;
     }
 
+
     h2 {
         font-size: 2rem;
         margin-top: 1rem;
@@ -177,32 +192,48 @@ nav .navbar-nav .nav-link:hover {
 
 @media (max-width: 568px) {
 
+
+    
+
+    #username {
+        text-align: left;
+        font-size: 0.7em;
+    }
+    .rounded-circle {
+        display: none;
+    }
     #img_princ {
-        height: 10rem;
+        height: 10rem; 
+
+
         object-fit: cover;
     }
 
     h2 {
+
         font-size: 1.5rem;
+
         margin-top: 1rem;
     }
 
     h4 {
-        font-size: 0.8rem;
+
+        font-size: 0.8rem; 
         padding: 0 0.5rem 1rem 0.5rem;
     }
-
     /* Ajuste de las tarjetas */
 
     .card {
-        margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem; 
     }
 
     .card-body {
-        padding: 0.5rem;
+    padding: 0.5rem;
     }
 
     .titulos {
-        font-size: 0.9rem;
+    font-size: 0.9rem;
     }
+
+
 }

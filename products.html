@@ -15,11 +15,13 @@
 </head>
 
 <body>
-  <!-- Navbar -->
+
+  <!-- INICIO DE NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
-  <!-- Container wrapper -->
+  <!-- Envoltorio de contenedor -->
   <div class="container-fluid">
-    <!-- Toggle button -->
+    <!-- Toggle button / BOTÓN DE ALTERNANCIA-->
+
     <button
       data-mdb-collapse-init
       class="navbar-toggler"
@@ -32,23 +34,27 @@
       <i class="fas fa-bars"></i>
     </button>
 
+    <!--FIN BOTON DE ALTERNANCIA-->
+    
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+
         <img
         src="img/logo-e-commerce.png" 
           height="75"
           alt="Logo e-commerce"
-          loading="lazy"
-          
-            
+
+          loading="lazy" 
+
         />
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="products.html">Home</a>
+
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="categories.html">Categorías</a>
@@ -56,6 +62,7 @@
         <li class="nav-item">
           <a class="nav-link" href="sell.html">Vender</a>
         </li>
+
       </ul>
       <!-- Left links -->
     </div>
@@ -107,6 +114,7 @@
           role="button"
           aria-expanded="false"
         >
+
           <img
             src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
             class="rounded-circle"
@@ -114,6 +122,10 @@
             alt="Black and White Portrait of a Man"
             loading="lazy"
           />
+
+          <span id="username" class="ms-2"> <!-- Nombre de usuario/email aquí --> </span>
+          
+
 
         </a>
         <ul
@@ -137,7 +149,9 @@
   <!-- Container wrapper -->
 </nav>
 
-<!-- Navbar -->
+
+<!--FIN DE NAVBAR -->
+
 
    <!-- A partir de aquí viene la imagen principal y productos -->
 
@@ -149,7 +163,12 @@
     <main class="container" id="prod_grid">
       <h2>Descubre nuestros autos</h2>
       <h4>Autos de alta gama preparados para tus largos viajes.</h4>
+
+
+    <!--FIN DE IMG PRINCIPAL-->
   
+    <!--CONTENIDO DE PRODUCTOS, TARJETAS-->
+
         <div class="product">
          <div class="row" id="product-list">
   
@@ -157,6 +176,9 @@
   
            </div>
       </div>
+
+    <!--FIN CONTENIDO DE PRODUCTOS-->
+
     </main>
     <footer class="text-muted">
       <div class="container">
@@ -177,6 +199,9 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
+
+    <script src="js/login.js"></script> <!-- acceso a js login para que muestre el usuario en el navbar-->
   </body>
   
   </html>
+
