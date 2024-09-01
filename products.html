@@ -15,110 +15,175 @@
 </head>
 
 <body>
-    <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    <div class="container-fluid justify-content-between">
-
-      <!-- Left elements -->
-      <div class="d-flex">
-        <!-- Brand -->
-        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="index.html">
-          <img
-            src="img/logo-e-commerce.png" 
-            height="100"
-            alt="Logo e-commerce"
-          />
-        </a>
-      </div>      
-      <!-- Left elements -->
-  
-      <!-- Center elements -->
-      <ul class="navbar-nav flex-row d-none d-md-flex">
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="categories.html">
-            <i class="titulos" aria-hidden="true">Categorías</i>
-          </a>
+  <!-- INICIO DE NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
+  <!-- Envoltorio de contenedor -->
+  <div class="container-fluid">
+    <!-- Toggle button / BOTÓN DE ALTERNANCIA-->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <!--FIN BOTON DE ALTERNANCIA-->
+    
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+        src="img/logo-e-commerce.png" 
+          height="75"
+          alt="Logo e-commerce"
+          loading="lazy" 
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
         </li>
-  
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="index.html">
-            <span> <i class="titulos"> Home </i></span>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
         </li>
-  
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="sell">
-            <i class="titulos" aria-hidden="true"> Vender </i>
-          </a>
-        </li>
- 
-      </ul>
-
-      <!-- Center elements -->
-  
-      <!-- Right elements -->
-
-      <ul class="navbar-nav flex-row">
-        <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
-              class="rounded-circle"
-              height="25"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
-            <strong class="d-none d-sm-block ms-3"> xxx@xmail.com</strong>
-          </a>
-        </li>
-        <li class="nav-item me-3 me-lg-1 ms-3">
-          <a class="nav-link" href="cart">
-            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </span>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
         </li>
       </ul>
-      <!-- Right elements -->
+      <!-- Left links -->
     </div>
-  </nav>
-  
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger"></span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+        
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+          <span id="username" class="ms-2"> <!-- Nombre de usuario/email aquí --> </span>
+          
+
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Mi perfil</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Configuración</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+
+<!--FIN DE NAVBAR -->
+
    <!-- A partir de aquí viene la imagen principal y productos -->
 
    <section class="fondo_img_principal">
-    <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
-   </section>
+    <section class="fondo_img_principal">
+      <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
+     </section>
+  
+    <main class="container" id="prod_grid">
+      <h2>Descubre nuestros autos</h2>
+      <h4>Autos de alta gama preparados para tus largos viajes.</h4>
 
-  <main class="container" id="prod_grid">
-    <h2>Descubre nuestros autos</h2>
-    <h4>Autos de alta gama preparados para tus largos viajes.</h4>
-
-      <div class="product">
-       <div class="row" id="product-list">
-
-        <!-- Los productos se agregarán aquí -->
-
-         </div>
+    <!--FIN DE IMG PRINCIPAL-->
+  
+    <!--CONTENIDO DE PRODUCTOS, TARJETAS-->
+        <div class="product">
+         <div class="row" id="product-list">
+  
+          <!-- Los productos se agregarán aquí -->
+  
+           </div>
+      </div>
+    <!--FIN CONTENIDO DE PRODUCTOS-->
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-</body>
-
-</html>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/login.js"></script> <!-- acceso a js login para que muestre el usuario en el navbar-->
+  </body>
+  
+  </html>
