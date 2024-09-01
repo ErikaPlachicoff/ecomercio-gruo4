@@ -11,28 +11,11 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/products.css" rel="stylesheet">
+  
 </head>
 
 <body>
-
-    <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-    <div class="container-fluid justify-content-between">
-
-  <script>
-    // Recuperar el usuario del localStorage
-const userStr = localStorage.getItem('user');
-if (userStr) {
-    const user = JSON.parse(userStr);
-    // Mostrar el usuario en pantalla
-    document.getElementById('user-email').innerHTML = `Nombre: ${user.name} <br> Email: ${user.email}`;
-} else {
-    document.getElementById('user-email').innerHTML = 'No hay usuario registrado.';
-}
-  </script>
-
-
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
   <!-- Container wrapper -->
   <div class="container-fluid">
@@ -49,33 +32,10 @@ if (userStr) {
       <i class="fas fa-bars"></i>
     </button>
 
-
-      <!-- Left elements -->
-      <div class="d-flex">
-        <!-- Brand -->
-        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="index.html">
-          <img
-            src="img/logo-e-commerce.png" 
-            height="100"
-            alt="Logo e-commerce"
-          />
-        </a>
-
-      </div>      
-      <!-- Left elements -->
-  
-      <!-- Center elements -->
-      <ul class="navbar-nav flex-row d-none d-md-flex">
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="categories.html">
-            <i class="titulos" aria-hidden="true">Categorías</i>
-          </a>
-
-
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
         <img
         src="img/logo-e-commerce.png" 
           height="75"
@@ -88,8 +48,7 @@ if (userStr) {
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-
+          <a class="nav-link" href="products.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="categories.html">Categorías</a>
@@ -108,28 +67,6 @@ if (userStr) {
       <a class="text-reset me-3" href="#">
         <i class="fas fa-shopping-cart"></i>
       </a>
-
-      <ul class="navbar-nav flex-row">
-        <li class="nav-item me-3 me-lg-1">
-          <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
-              class="rounded-circle"
-              height="25"
-              alt="Black and White Portrait of a Man"
-              loading="lazy"
-            />
-            <strong class="d-none d-sm-block ms-3"> xxx@xmail.com</strong>
-          </a>
-        </li>
-        <li class="nav-item me-3 me-lg-1 ms-3">
-          <a class="nav-link" href="cart">
-            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            </span>
-          </a>
-        </li>
-      </ul>
-      <!-- Right elements -->
 
       <!-- Notifications -->
       <div class="dropdown">
@@ -157,6 +94,7 @@ if (userStr) {
           <li>
             <a class="dropdown-item" href="#">Something else here</a>
           </li>
+
         </ul>
       </div>
       <!-- Avatar -->
@@ -176,8 +114,8 @@ if (userStr) {
             alt="Black and White Portrait of a Man"
             loading="lazy"
           />
-        </a>
 
+        </a>
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
@@ -193,13 +131,6 @@ if (userStr) {
           </li>
         </ul>
       </div>
-
-<!-- User name -->
-<div class="ms-3 d-flex align-items-center">
-  <p id="user-email" class="top-right">Usuario</p>
-</div>
-
-
     </div>
     <!-- Right elements -->
   </div>
@@ -211,41 +142,41 @@ if (userStr) {
    <!-- A partir de aquí viene la imagen principal y productos -->
 
    <section class="fondo_img_principal">
-    <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
-   </section>
-
-  <main class="container" id="prod_grid">
-    <h2>Descubre nuestros autos</h2>
-    <h4>Autos de alta gama preparados para tus largos viajes.</h4>
-
-      <div class="product">
-       <div class="row" id="product-list">
-
-        <!-- Los productos se agregarán aquí -->
-
-         </div>
+    <section class="fondo_img_principal">
+      <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
+     </section>
+  
+    <main class="container" id="prod_grid">
+      <h2>Descubre nuestros autos</h2>
+      <h4>Autos de alta gama preparados para tus largos viajes.</h4>
+  
+        <div class="product">
+         <div class="row" id="product-list">
+  
+          <!-- Los productos se agregarán aquí -->
+  
+           </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-
-</body>
-
-</html>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+  </body>
+  
+  </html>
