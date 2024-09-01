@@ -11,13 +11,42 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/products.css" rel="stylesheet">
-  
 </head>
 
 <body>
+<<<<<<< Updated upstream
     <!-- Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
     <div class="container-fluid justify-content-between">
+=======
+  <script>
+    // Recuperar el usuario del localStorage
+const userStr = localStorage.getItem('user');
+if (userStr) {
+    const user = JSON.parse(userStr);
+    // Mostrar el usuario en pantalla
+    document.getElementById('user-email').innerHTML = `Nombre: ${user.name} <br> Email: ${user.email}`;
+} else {
+    document.getElementById('user-email').innerHTML = 'No hay usuario registrado.';
+}
+  </script>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-white bg-white">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+>>>>>>> Stashed changes
 
       <!-- Left elements -->
       <div class="d-flex">
@@ -29,6 +58,7 @@
             alt="Logo e-commerce"
           />
         </a>
+<<<<<<< Updated upstream
       </div>      
       <!-- Left elements -->
   
@@ -79,6 +109,27 @@
         </li>
       </ul>
       <!-- Right elements -->
+=======
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Mi perfil</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Configuración</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+<!-- User name -->
+<div class="ms-3 d-flex align-items-center">
+  <p id="user-email" class="top-right">Usuario</p>
+</div>
+>>>>>>> Stashed changes
     </div>
   </nav>
   
@@ -119,6 +170,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+
 </body>
 
 </html>
