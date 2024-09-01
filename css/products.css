@@ -98,7 +98,6 @@ height: 100%;
     color: white;
 }
 
-
 /* Estilo del nav */
 
 nav.navbar {
@@ -122,4 +121,89 @@ nav .navbar-nav .nav-link:hover {
 .titulos{
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+
+/* Para diferentes resoluciones */
+
+/* Ajustes Resolución Estándar */
+
+@media (min-width: 1366px) {
+    #img_princ {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        padding: 0 5rem 6rem 5rem;
+    }
+}
+
+/* Ajustes para Tableta en Modo Vertical */
+
+@media (max-width: 1024px) and (min-width: 768px) {
+
+    /* Ajustes de la imagen principal */
+
+    .fondo_img_principal {
+        height: 25rem;
+    }
+
+    #img_princ {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+
+/* Ajustes para Smartphone Pequeño */
+
+@media (max-width: 568px) {
+
+    #img_princ {
+        height: 10rem; 
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 1.5rem; 
+        margin-top: 1rem;
+    }
+
+    h4 {
+        font-size: 0.8rem; 
+        padding: 0 0.5rem 1rem 0.5rem;
+    }
+
+    /* Ajuste de las tarjetas */
+
+    .card {
+        margin-bottom: 0.5rem; 
+    }
+
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .titulos {
+        font-size: 0.9rem;
+    }
+
 }
