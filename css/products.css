@@ -1,8 +1,7 @@
-
 h2 {
-    position: relative!important;
+    position: relative !important;
     font-size: 3rem;
-    text-align: center!important;
+    text-align: center !important;
     margin-top: 20px;
     font-weight: bold;
     color: #22223C;
@@ -14,48 +13,55 @@ h2::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 50%; /* Inicia el borde desde el centro */
-    transform: translateX(-100%); /* Centra el borde */
-    width: 30%; /* Esto es para ajustar la longitud del borde */
-    border-bottom: 2px solid #F5B963; /* Mantiene el estilo del borde */
+    left: 50%;
+    /* Inicia el borde desde el centro */
+    transform: translateX(-100%);
+    /* Centra el borde */
+    width: 25%;
+    /* Esto es para ajustar la longitud del borde */
+    border-bottom: 2px solid #F5B963;
+    /* Mantiene el estilo del borde */
 }
 
-h4{
+h4 {
     font-size: 1.2rem;
-    text-align: center!important;
+    text-align: center !important;
     padding: 0 3rem 6rem 3rem;
     color: #47475F;
 }
 
-
-#img_princ{
-position: relative;
-width: 100%;
-height: 100%;
+#img_princ {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
+#navbarDropdownMenuAvatar + span {
+    color: #000; /* Asegúrate de que el color del texto sea visible */
+    font-size: 16px; /* Ajusta el tamaño del texto si es necesario */
+}
 
-/* Estilo de la tarjeta */
+/*Estilo de la tarjeta*/
 
 .card {
-    border-radius: 2rem; 
-    box-shadow: 0 0.25rem 0.5rem rgba(27, 25, 25, 0.1); 
+    border-radius: 2rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(27, 25, 25, 0.1);
     transition: transform 0.2s;
     background: #c0c9e6;
-    border: 1px solid #0d2b66; 
+    border: 1px solid #0d2b66;
 }
 
 .card:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .card-img-top {
-    border-top-left-radius: 2rem; 
+    border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
 
 .card-body {
-    text-align: center; 
+    text-align: center;
     padding: 2rem;
 }
 
@@ -64,7 +70,7 @@ height: 100%;
 .image-container {
     position: relative;
     overflow: hidden;
-    border-top-left-radius: 2rem; 
+    border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
 
@@ -75,17 +81,16 @@ height: 100%;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7);
     opacity: 0;
     transition: opacity 0.5s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 2rem; 
+    border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
-
 
 .image-container:hover .overlay {
     opacity: 1;
@@ -105,7 +110,9 @@ nav.navbar {
     position: relative !important;
     display: flex !important;
     color: #f3e7e7 !important;
-    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651); 
+    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651);
+    padding: 0rem;
+
 }
 
 nav.navbar .navbar-nav .nav-link {
@@ -114,16 +121,10 @@ nav.navbar .navbar-nav .nav-link {
 }
 
 nav .navbar-nav .nav-link:hover {
-    color: #212a47 !important; 
-    background-color: #8bb8c0; 
-    border-radius: 0.3125rem; 
+    color: #212a47 !important;
+    background-color: #8bb8c0;
+    border-radius: 0.3125rem;
 }
-.titulos{
-    font-size: 1.5rem;
-    font-weight: bold;
-
-}
-
 
 /* Para diferentes resoluciones */
 
@@ -161,7 +162,6 @@ nav .navbar-nav .nav-link:hover {
         object-fit: cover;
     }
 
-
     h2 {
         font-size: 2rem;
         margin-top: 1rem;
@@ -173,30 +173,29 @@ nav .navbar-nav .nav-link:hover {
     }
 }
 
-
 /* Ajustes para Smartphone Pequeño */
 
 @media (max-width: 568px) {
 
     #img_princ {
-        height: 10rem; 
+        height: 10rem;
         object-fit: cover;
     }
 
     h2 {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         margin-top: 1rem;
     }
 
     h4 {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
         padding: 0 0.5rem 1rem 0.5rem;
     }
 
     /* Ajuste de las tarjetas */
 
     .card {
-        margin-bottom: 0.5rem; 
+        margin-bottom: 0.5rem;
     }
 
     .card-body {
@@ -206,14 +205,4 @@ nav .navbar-nav .nav-link:hover {
     .titulos {
         font-size: 0.9rem;
     }
-
-}
-.top-right {
-    position: relative;
-    top: 0.5rem;
-    right: 1rem; 
-    padding: 0.625rem; 
-    color: white;
-    border-radius: 0.3125rem;
-
 }
