@@ -1,56 +1,148 @@
+/* Estilos globales */
 .gradient-custom-2 {
-   /* fallback for old browsers */
+   background-image: url(../img/img_para_login.png) !important;
    background-image: url(../img/fondo_bienvenida.jpg) !important;
    background-repeat: no-repeat !important;
    background-size: cover !important;
-   
-   
-   }
-   
+}
+
+h1 {
+   font-family: 'Press Start 2P';
+}
+
+#ingrese {
+   background-color: #463f6d!important;
+   color: #fff !important;
+   border: none !important;
+}
+
+#registro {
+   background-color: rgba(121, 114, 160, 0.356) !important;
+   color: rgba(41, 38, 61, 0.712) !important;
+   border: rgba(41, 38, 61, 0.356) !important;
+}
+
+button:hover {
+   transform: scale(1.05);
+}
+
+/* Estilos para pantallas grandes (1366px y mayores) */
+@media (min-width: 1366px) {
+
    h1 {
-    font-family:'Press Start 2P'; 
-   
+      font-size: 2.3rem;
    }
-
-   #ingrese  {
-    background-color: rgb(121, 114, 160) !important;
-    color: #fff !important;
-    border: #fff !important;
-   }
-   #registro {
-    background-color:rgba(121, 114, 160, 0.356) !important;
-    color: rgba(41, 38, 61, 0.712)!important;
-    border: rgba(41, 38, 61, 0.356) !important;
-   }
-   
-
-   button:hover{
-     transform: scale(1.05); 
-   }
-   
-   @media (min-width: 768px) {
    .gradient-form {
-   height: 100vh !important;
+     padding: 2rem;
+
    }
-   h1{
-   /* justify-content: center !important;
-    text-align: center  !important;*/
-    padding-left: 0.25rem; /* Padding horizontal izquierdo */
-    padding-right: 0.25rem; /* Padding horizontal derecho */
-    padding-top: 1.5rem; /* Padding vertical superior */
-    padding-bottom: 1.5rem; /* Padding vertical inferior */
+
+   .card {
+     margin: 2rem auto;
    }
+}
+
+/* Resolución: TABLETA MODO VERTICAL (768x1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .text-white {
+      text-align: center;
    }
-   @media (min-width: 769px) {
+
+   h1 {
+      font-size: 2rem;
+      padding-top: 1rem;
+      margin-left: 9rem;
+   }
+
+   #cabecera {
+      height: 57px;
+      font-size: medium;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2rem;
+      padding-left: 9rem;
+      
+   }
+
    .gradient-custom-2 {
-   border-top-right-radius: .3rem;
-   border-bottom-right-radius: .3rem;
+     border-radius: .3rem;
+     margin: 0rem;
    }
+}
+
+@media (min-width: 569px) and (max-width: 767px){
+   h1{
+      position: relative;
+      /*font-size: medium;*/
+      padding-left: 4rem;
+      padding-top: 1rem;
+      margin-bottom: 0rem;
+   }
+   #cabecera {
+      position: relative;
+      width: 20.3125rem;
+      height: 3rem;
+      left: 7.3rem;
+
+      font-family: 'Poppins';
+      font-size: 1.5em    
+   }
+}
+/* Resolución: SMARTPHONE PEQUEÑO (320 x 568 px)*/
+@media (min-width: 320px) and (max-width: 568px) {
+   .gradient-form {
+      height: 100vh; /* Ocupar toda la altura de la pantalla */
+      margin: 0; /* Eliminar márgenes */
+      padding: 0; /* Eliminar padding */
+      box-sizing: border-box; /* Incluir padding y border en el cálculo de ancho/alto */
+   }
+
+   .gradient-custom-2 {
+      margin: 0;
+      padding: 0.5rem;
+   }
+
+   h1 {
+      font-size: 1.2rem; 
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0 auto;
+      max-width: 100%; 
    }
    
-  /* @media (max-width: 991px){
-      .col-lg-6 {
-         display: none;
-     }
-         px-1 py-4 p-md-5
-   }*/
+   #cabecera {
+      font-size: 0.9rem; 
+      text-align: center;
+      position: relative;
+      margin: 0 auto; 
+      font-family: 'Poppins';
+      max-width: 100%; 
+      padding: 0.5rem; 
+   }
+   
+   form p {
+      font-size: 0.8rem;
+      padding: 0.5rem; 
+   }
+   
+   input {
+      font-size: small !important;
+      width: 100%; 
+      padding: 0.5rem; 
+   }
+   
+   button {
+      margin: auto;
+      font-size: 0.6rem !important;
+      padding: 0.5rem 1rem;
+      width: 100%; 
+   }
+   
+   a {
+      font-size: x-small;
+      display: block; 
+      text-align: center;
+      padding: 0.5rem 0;
+   }
+}
