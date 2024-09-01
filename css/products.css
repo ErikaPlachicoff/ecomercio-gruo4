@@ -98,7 +98,6 @@ height: 100%;
     color: white;
 }
 
-
 /* Estilo del nav */
 
 nav.navbar {
@@ -122,8 +121,7 @@ nav .navbar-nav .nav-link:hover {
 .titulos{
     font-size: 1.5rem;
     font-weight: bold;
-<<<<<<< Updated upstream
-=======
+
 }
 
 
@@ -208,6 +206,7 @@ nav .navbar-nav .nav-link:hover {
     .titulos {
         font-size: 0.9rem;
     }
+
 }
 .top-right {
     position: relative;
@@ -216,5 +215,5 @@ nav .navbar-nav .nav-link:hover {
     padding: 0.625rem; 
     color: white;
     border-radius: 0.3125rem;
->>>>>>> Stashed changes
+
 }

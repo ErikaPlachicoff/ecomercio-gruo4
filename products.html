@@ -14,11 +14,11 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
+
     <!-- Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
     <div class="container-fluid justify-content-between">
-=======
+
   <script>
     // Recuperar el usuario del localStorage
 const userStr = localStorage.getItem('user');
@@ -30,6 +30,8 @@ if (userStr) {
     document.getElementById('user-email').innerHTML = 'No hay usuario registrado.';
 }
   </script>
+
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
   <!-- Container wrapper -->
@@ -46,7 +48,7 @@ if (userStr) {
     >
       <i class="fas fa-bars"></i>
     </button>
->>>>>>> Stashed changes
+
 
       <!-- Left elements -->
       <div class="d-flex">
@@ -58,7 +60,7 @@ if (userStr) {
             alt="Logo e-commerce"
           />
         </a>
-<<<<<<< Updated upstream
+
       </div>      
       <!-- Left elements -->
   
@@ -68,25 +70,44 @@ if (userStr) {
           <a class="nav-link" href="categories.html">
             <i class="titulos" aria-hidden="true">Categorías</i>
           </a>
-        </li>
-  
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="index.html">
-            <span> <i class="titulos"> Home </i></span>
-          </a>
-        </li>
-  
-        <li class="nav-item mx-5">
-          <a class="nav-link" href="sell">
-            <i class="titulos" aria-hidden="true"> Vender </i>
-          </a>
-        </li>
- 
-      </ul>
 
-      <!-- Center elements -->
-  
-      <!-- Right elements -->
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <img
+        src="img/logo-e-commerce.png" 
+          height="75"
+          alt="Logo e-commerce"
+          loading="lazy"
+          
+            
+        />
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
 
       <ul class="navbar-nav flex-row">
         <li class="nav-item me-3 me-lg-1">
@@ -109,7 +130,54 @@ if (userStr) {
         </li>
       </ul>
       <!-- Right elements -->
-=======
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger"></span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
@@ -125,14 +193,21 @@ if (userStr) {
           </li>
         </ul>
       </div>
+
 <!-- User name -->
 <div class="ms-3 d-flex align-items-center">
   <p id="user-email" class="top-right">Usuario</p>
 </div>
->>>>>>> Stashed changes
+
+
     </div>
-  </nav>
-  
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+
+<!-- Navbar -->
+
    <!-- A partir de aquí viene la imagen principal y productos -->
 
    <section class="fondo_img_principal">
