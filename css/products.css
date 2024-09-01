@@ -121,6 +121,7 @@ nav .navbar-nav .nav-link:hover {
 .titulos{
     font-size: 1.5rem;
     font-weight: bold;
+
 }
 
 
@@ -205,5 +206,14 @@ nav .navbar-nav .nav-link:hover {
     .titulos {
         font-size: 0.9rem;
     }
+
+}
+.top-right {
+    position: relative;
+    top: 0.5rem;
+    right: 1rem; 
+    padding: 0.625rem; 
+    color: white;
+    border-radius: 0.3125rem;
 
 }
