@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
   </div>
 `;
+  //guarda el id en localStorage
+productElement.addEventListener('click', function() {
+  localStorage.setItem('IDproductSelect', product.id)
+  console.log(`Producto con ID ${product.id} guardado en localStorage`)
+  //redirigir a la pagina product-info 
+  window.location.href = 'product-info.html'
+})
         productList.appendChild(productElement);
       });
     }
