@@ -49,3 +49,9 @@ window.addEventListener('DOMContentLoaded', function() {
       window.location.href = "login.html"; // Redirige al login si no está autenticado
   }
 });
+
+const user = {
+  name: "Juan",
+  email: "juan@example.com"
+};
+localStorage.setItem('user', JSON.stringify(user));
