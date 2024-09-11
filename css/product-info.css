@@ -1,0 +1,190 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+/* Estilo del nav */
+nav.navbar {
+    background: rgba(53, 73, 125, 1) !important;
+    position: relative !important;
+    display: flex !important;
+    color: #f3e7e7 !important;
+    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651); 
+    padding: 0rem !important;
+}
+
+nav.navbar .navbar-nav .nav-link {
+    color: #fffefe !important;
+    padding: 1rem !important;
+}
+
+nav .navbar-nav .nav-link:hover {
+    color: #212a47 !important; 
+    background-color: #8bb8c0; 
+    border-radius: 0.3125rem;
+}
+
+/* Estilos del botón de alternancia (menu hamburguesa) */
+.navbar-toggler {
+    color: #fff !important;
+}
+#img_princ{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*estilos del usuario*/
+#username {
+    color: #fdfdfd; 
+}
+
+/*estilos de flechitas de menu desplegables*/
+.dropdown-toggle::after {
+    color: #fff;
+  }
+
+  #portada {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    margin-top: 0;
+  }
+  
+  #portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .portada-titulo {
+    position: absolute;
+    top: 2%; /* Ajuste relativo al tamaño del contenedor */
+    left: 2%; /* Ajuste relativo al tamaño del contenedor */
+    font-size: 2rem; /* Ajuste del tamaño de la fuente relativo */
+    color: rgb(250, 142, 0);
+    padding: 1rem;
+    font-family: 'Press Start 2P';
+    
+}
+
+.portada-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Ajusta esto según la altura del degradado que desees */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    /* Cambia rgba(255, 255, 255, 1) al color de fondo de tu página si es diferente */
+}
+
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-family: 'Press Start 2P';
+}
+
+/* Botón "Conocer más" */
+.conocer-mas {
+    position: absolute;
+    bottom: 10%; /* Ajusta esta posición si es necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el cursor */
+.conocer-mas:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cambio en la opacidad */
+}
+
+/* Icono de flecha */
+.conocer-mas i {
+    margin-left: 8px;
+}
+
+.carousel-item img {
+    object-fit: contain;
+    object-position: bottom;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10vh;
+    left: 5vw;
+    color: white;
+    font-size: 4vw;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.related-product {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#product-description {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 6vw;
+        bottom: 15vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 8vw;
+        bottom: 20vh;
+    }
+}
+
+
