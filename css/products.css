@@ -4,7 +4,7 @@
     gap: 20px; /* Espacio entre las tarjetas */
     padding-top: 6em;
 }
-  
+
 h2 {
     position: relative !important;
     font-size: 3rem;
@@ -45,7 +45,6 @@ h4 {
     height: 100%;
 }
 
-
 /*estilos del usuario*/
 #username {
     color: #fdfdfd; 
@@ -54,13 +53,7 @@ h4 {
 /*estilos de flechitas de menu desplegables*/
 .dropdown-toggle::after {
     color: #fff;
-
-
-/*estilos de flechitas de menu desplegables*/
-.dropdown-toggle::after {
-    color: #fff;
-  }
-
+}
 
 /*Estilo de la tarjeta*/
 
@@ -307,6 +300,4 @@ nav .navbar-nav .nav-link:hover {
     .titulos {
     font-size: 0.9rem;
     }
-
-
 }
