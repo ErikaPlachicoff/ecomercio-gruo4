@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const productElement = document.createElement('div');
         productElement.classList.add('col-12', 'col-md-6', 'col-lg-4');
         productElement.innerHTML = `
-  <div class="card mb-3">
+  <div class="card mb-3"> 
     <div class="image-container position-relative">
       <img src="${product.image}" class="card-img-top" alt="${product.name}">
       <div class="overlay position-absolute bottom-0 start-0 end-0 text-white d-flex flex-column justify-content-center align-items-center">

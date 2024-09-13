@@ -13,33 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Seleccionar el elemento de la portada
                 const portada = document.querySelector('#portada');
-                if (product.images.length > 0) {
-                    // Crear el elemento <img> para la primera imagen
-                    const imgElement = document.createElement('img');
-                    imgElement.src = product.images[0];
-                    imgElement.alt = "Imagen del producto portada";
-                    imgElement.classList.add('img-fluid'); // Clase de Bootstrap
-
-                    // Crear el contenedor para el título
-                    const tituloContainer = document.createElement('div');
-                    tituloContainer.classList.add('portada-titulo');
-                    const tituloElement = document.createElement('h1');
-                    tituloElement.textContent = product.name;
-                    tituloContainer.appendChild(tituloElement);
-
-                    // Añadir la imagen y el título a la portada
-                    portada.appendChild(imgElement);
-                    portada.appendChild(tituloContainer);
-
-                    // Crear el botón con la flecha
-                    const conocerMasButton = document.createElement('a');
-                    conocerMasButton.href = "#product-list"; // Enlace a otra sección o página
-                    conocerMasButton.classList.add('conocer-mas');
-                    conocerMasButton.innerHTML = 'Conocer más <i class="fas fa-arrow-down"></i>'; // Icono de flecha
-
-                    // Añadir el botón a la portada
-                    portada.appendChild(conocerMasButton);
-                }
 
                 // Crear el contenedor del carrusel
                 const carouselContainer = document.createElement('div');
@@ -58,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
 
-                // Insertar el carrusel en el DOM
-                document.getElementById('product-list').appendChild(carouselContainer);
+                // Añadir el carrusel a la portada
+                portada.appendChild(carouselContainer);
 
                 // Agregar las imágenes al carrusel
                 const carouselInner = carouselContainer.querySelector('.carousel-inner');
@@ -74,23 +47,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Insertar la descripción del producto
                 const productDescription = document.createElement('div');
                 productDescription.innerHTML = `
-                    <h3>${product.name}</h3>
+                    <h1>${product.name}</h1>
                     <p>${product.description}</p>
-                    <p><strong>Precio:</strong> ${product.currency} ${product.cost}</p>
+                    `;
+                //Insertar información del producto
+                //uso span en vez de p para que no quede con margenes predeterminados 
+                const productInfo = document.createElement('div');
+                productInfo.classList.add('flex');
+                productInfo.innerHTML = `
+                <span class="product-detail">Precio: ${product.currency} ${product.cost}</span>
+                <span class="product-detail">Vendidos: ${product.soldCount} Unidades</span>
                 `;
+
+                // Se agregan dinámicamente en HTML con el id 'product-description'
+                             
                 document.getElementById('product-description').appendChild(productDescription);
+                document.getElementById('product-description').appendChild(productInfo);
+               
 
                 // Insertar los productos relacionados como tarjetas
                 const relatedProductsContainer = document.getElementById('related-products-container');
-
-                // Asegúrate de que el contenedor tenga la clase 'row' para Bootstrap
                 relatedProductsContainer.classList.add('row');
 
                 product.relatedProducts.forEach(relatedProduct => {
                     const relatedProductElement = document.createElement('div');
-                    // Añadir la clase de columna para que las cards se alineen una al lado de la otra
                     relatedProductElement.classList.add('col-md-4', 'col-lg-3', 'mb-4');
                     relatedProductElement.innerHTML = `
+                    <div class="card mb-3">
                         <div class="card related-product">
                             <img src="${relatedProduct.image}" class="card-img-top" alt="${relatedProduct.name}">
                             <div class="card-body">
