@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Se agregan dinámicamente en HTML con el id 'product-description'
                              
                 document.getElementById('product-description').appendChild(productDescription);
-                document.getElementById('product-description').appendChild(productInfo);
+                  document.getElementById('product-description').appendChild(productInfo);
                
 
                 // Insertar los productos relacionados como tarjetas

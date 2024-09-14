@@ -2,9 +2,11 @@ html {
     scroll-behavior: smooth;
     padding:0;
     margin:0;
+    background-color: #fff !important;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
    
 }
 /* INICIO ESTILOS NAVBAR */
@@ -68,37 +70,18 @@ nav .navbar-nav .nav-link:hover {
     
   }
 
-  #portada img {
+#portada img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-/*botón conocer más*/
-/*.conocer-mas {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(253,187,45,0) 86%); 
-    color: white;
-    padding: 10rem 0; 
-    font-size: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    z-index: 10;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
 
-.conocer-mas i {
-    margin-left: 8px; /* Espacio entre el texto y el ícono de flecha 
-}*/
 /*fin estilos portada*/
 
+
 /*específico carrusel*/
+
+
 .carousel-container {
     position: absolute;
     top:0;
@@ -109,96 +92,170 @@ nav .navbar-nav .nav-link:hover {
     margin: 0;
     z-index: 1;
 }
-/* especifica como se muestran las img en el carrusel, podría ser útil
+
 .carousel-item img {
-    object-fit: contain;
-    object-position: bottom;
     width: 100%;
-    height: 100%;
-}*/
-
-/*si quisieramos que haya texto sobre las imagenes del carrusel podemos usar estos estilos*/
-/*.carousel-caption {
+    height: 100vh; 
+    object-fit: cover;
+}
+.carousel-control-next, .carousel-control-prev {
     position: absolute;
-    bottom: 10vh;
-    left: 5vw;
-    color: white;
-    font-size: 4vw;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}*/
-
-/*título del prpducto*/
-#product-description h1 {
-    font-family: 'Press Start 2P';
+    top: 0;
+    bottom: -2px !important;
+    z-index: 2 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+.gradiente {
+    position: absolute;
+    top: 60vh; 
+    left: 0;
+    width: 100%;
+    height: 40vh; 
+    background: linear-gradient(0deg, rgba(0,0,0) 0%, rgba(228,226,222,0) 86%);
+    z-index: 1; 
 }
 
-/*información de producto*/
-.flex {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+/*TIULO DEL PRODUCTO*/
+
+#product-description h1 {
+   
+    font-size: 5.5em;
+    text-align: left;
+    padding: 2.5rem;
     
 }
 
 
-
-.product-detail{
-    padding: 0 .5rem; /*0 arriba .5 a los lados*/
-    align-items: center;  
-    padding: 0 .5rem; /* Espacio lateral */
-    position: relative; /* Para usar ::before */
+#product-description {
+    padding: 20px;
+    color: rgb(245, 245, 234);
+    margin-top: 20px;
+    text-align: left;    
 }
 
 
-/* Añadir línea vertical antes de "Vendidos" */
+/*FIN TITULO DEL PRODUCTO*/
+
+
+/*DESCRIPCION DEL PRODUCTO*/
+
+.viewport-2 {
+    position: relative;
+    margin-top: 0; 
+    top: -10vh; 
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    flex: 1;
+}
+
+#product-description p {
+    text-align: left;
+    font-size: 1.7em;
+    padding-top: 1rem;
+    padding-left: 3.5rem;
+}
+
+/*INFO PRODUCTO*/
+
+.flex {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10rem;
+    margin-left: 3.5rem;
+   
+    padding-top: 3rem;
+    
+}
+
+.product-detail{
+    padding: 0 .5rem; /*0 arriba .5 a los lados*/
+    position: relative; /* Para usar ::before */
+}
+
 .product-detail:not(:last-child)::after {
     content: "";
     display: block;
     position: absolute;
-    right: 0rem; 
+    right: 0rem;
     width: 1px;
-    height: 80%; 
+    height: 80%;
     background: #fff;
-    top: 0; 
-
+    top: 0;
 }
+
 
 .flex span {
     font-weight: bold;
-    font-size: 1.2em;
-    align-items: center;
-    color: #e8c6f8;
+    font-size: 1em;
+    color: #fdfdfd;
+
+}
+/*FIN INFO PRODUCTO*/
+
+
+
+/*CARDS PRODUCTOS RELACIONADOS*/
+
+
+
+#related-products-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+   padding-top: 0;
+}
+
+
+.related-product {
+    width: 12.5rem; 
+    margin: 0.625rem;
+    text-align: center;
+    padding-top: 0;
 
 }
 
 
+.related-products h2 {
+    color: #fff;
+    text-align: left;
+    padding-left: 20rem;
+    position: relative;
+    margin-top: -3rem;
+}
+.related-products h2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 18rem; 
+    width: 1px;
+    height: 80%; 
+    background: #fff;
+    top: 10%; 
+}
 
-/*tarjetas de productos relacionados*/
+
 .card {
     background-color: transparent; 
     border: none; 
     color: #fdfdfd;
-  }
+}
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-}
-
-/*productos relacionados*/
-.related-product {
-    width: 200px;
-    margin: 10px;
-    text-align: center;
-}
-
-
-h2 {
-    color: #fdfdfd;
 }
 
 .card-img-top {
@@ -210,19 +267,13 @@ h2 {
 .card-title {
     font-size: 16px;
     margin-top: 10px;
-}
-
-#product-description {
-    padding: 20px;
-   color: rgb(245, 245, 234);
-    border-radius: 5px;
-    margin-top: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;;
     
 }
-.viewport-2{
-    background-color: black;
-}
 
+
+/*IR AGREGANDO RESPONSIVIDAD*/
 
 @media (max-width: 768px) {
     .carousel-caption {
@@ -237,5 +288,3 @@ h2 {
         bottom: 20vh;
     }
 }
-
-
