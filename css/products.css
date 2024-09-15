@@ -1,3 +1,10 @@
+.product {
+    display: flex;
+    justify-content: center; /* Centrar las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding-top: 6em;
+}
+
 h2 {
     position: relative !important;
     font-size: 3rem;
@@ -37,6 +44,7 @@ h4 {
     width: 100%;
     height: 100%;
 }
+
 /*estilos del usuario*/
 #username {
     color: #fdfdfd; 
@@ -45,10 +53,11 @@ h4 {
 /*estilos de flechitas de menu desplegables*/
 .dropdown-toggle::after {
     color: #fff;
-  }
-
+}
 
 /*Estilo de la tarjeta*/
+
+/* Ajustes para tarjetas */
 
 .card {
     border-radius: 2rem;
@@ -56,6 +65,18 @@ h4 {
     transition: transform 0.2s;
     background: #c0c9e6;
     border: 1px solid #0d2b66;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    min-height: 400px; /* Altura mínima para todas las tarjetas */
+}
+
+.separacion-cards{
+    padding-bottom: 10%;
 }
 
 .card:hover {
@@ -63,13 +84,52 @@ h4 {
 }
 
 .card-img-top {
-    border-top-left-radius: 2rem;
-    border-top-right-radius: 2rem;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones y rellene el contenedor */
 }
 
 .card-body {
     text-align: center;
     padding: 2rem;
+}
+/*Cambios*/
+
+/* Contenedor de las tarjetas */
+
+
+#prod_grid{
+    padding-top: 2em;
+}
+
+#search-box{
+    width: 66%;
+}
+
+.barra-filtros{
+    background-color: #0d2b661c;
+    border-radius: 1.5em;
+    padding:2em;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #22223ce1;
+}
+
+/* Asegurar que todas las tarjetas tengan el mismo margen inferior */
+.separacion-cards {
+    margin-bottom: 20px;
+}
+
+
+/* Mantener el mismo comportamiento en pantallas pequeñas */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        height: auto; /* Permitir que la altura sea dinámica en pantallas pequeñas */
+    }
+
+    .card-img-top {
+        height: auto; /* Permitir que la imagen se ajuste automáticamente en pantallas pequeñas */
+    }
 }
 
 /* Contenedor de la imagen con el overlay */
@@ -186,6 +246,12 @@ nav .navbar-nav .nav-link:hover {
         font-size: 1rem;
         padding: 0 2rem 2rem 2rem;
     }
+    .card {
+        max-width: 90%; /* Permitir que la tarjeta ocupe un poco menos del 100% del ancho */
+    }
+    .product {
+        gap: 10px; /* Espacio reducido entre tarjetas en pantallas más pequeñas */
+    }
 }
 
 /* Ajustes para Smartphone Pequeño */
@@ -234,6 +300,4 @@ nav .navbar-nav .nav-link:hover {
     .titulos {
     font-size: 0.9rem;
     }
-
-
 }
