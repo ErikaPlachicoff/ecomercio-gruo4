@@ -132,6 +132,13 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>
       `;
+      // Añadir el evento click para guardar el producto en el localStorage
+      productElement.addEventListener('click', function() {
+        localStorage.setItem('IDproductSelect', product.id);
+        console.log('Producto con ID ${product.id} guardado en localStorage');
+        // Redirigir a la página de información del producto
+        window.location.href = 'product-info.html';
+      });
       productList.appendChild(productElement);
     });
   }
@@ -184,4 +191,3 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('sort-options').addEventListener('change', applyFilters);
   document.getElementById('search-box').addEventListener('input', applyFilters);
 });
-
