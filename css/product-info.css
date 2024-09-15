@@ -20,7 +20,7 @@ nav.navbar {
     z-index: 10;
     display: flex !important;
     color: #f3e7e7 !important;
-    font-size: x-large;
+    font-size: 1rem; 
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }
 
@@ -30,8 +30,8 @@ nav.navbar .navbar-nav .nav-link {
 }
 
 nav .navbar-nav .nav-link:hover {
-    color: #212a47 !important; 
-    background-color: #8bb8c0; 
+    color: #0f1118 !important; 
+    background-color: #8bb8c09a; 
     border-radius: 0.3125rem;
 }
 
@@ -134,6 +134,11 @@ nav .navbar-nav .nav-link:hover {
     padding: 2.5rem;
     
 }
+#product-description .category {
+    font-size: 0.4em;
+    color: gray;
+    margin-left: 10px;
+}
 
 
 #product-description {
@@ -196,7 +201,7 @@ nav .navbar-nav .nav-link:hover {
 
 .flex span {
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #fdfdfd;
 
 }
@@ -214,6 +219,7 @@ nav .navbar-nav .nav-link:hover {
     justify-content: center; 
     gap: 20px; 
    padding-top: 0;
+   
 }
 
 

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Insertar la descripción del producto
                 const productDescription = document.createElement('div');
                 productDescription.innerHTML = `
-                    <h1>${product.name}</h1>
+                    <h1>${product.name} <span class="category">Categoría: ${product.category}</span></h1>
                     <p>${product.description}</p>
                     `;
                 //Insertar información del producto
