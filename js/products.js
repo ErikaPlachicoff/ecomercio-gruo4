@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       subtitle: "Encontrá toda la diversión en nuestra tienda de juguetes."
     },
     "103": {
-      image: "img/muebles3.jpg",
+      image: "img/muebles3.jpeg",
       title: "Renueva tu hogar en un click",
       subtitle: "Variedad de muebles importados y nacionales"
     },
