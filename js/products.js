@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       subtitle: "Autos de alta gama preparados para tus largos viajes."
     },
     "102": {
-      image: "img/juguetes.jpg",
+      image: "img/juguetes.jpeg",
       title: "Tienda de juguetes",
       subtitle: "Encontrá toda la diversión en nuestra tienda de juguetes."
     },
