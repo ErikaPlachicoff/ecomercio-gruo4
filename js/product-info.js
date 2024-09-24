@@ -82,11 +82,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                     relatedProductsContainer.appendChild(relatedProductElement);
-                });
+                       // Agregar evento 'click' para cada tarjeta de producto relacionado
+                       relatedProductElement.addEventListener('click', function() {
+                        // Guardar el ID del producto relacionado en localStorage
+                        localStorage.setItem('IDproductSelect', relatedProduct.id);
 
+                        // Redirigir a la página product-info.html
+                        window.location.href = 'product-info.html';
+                    });
+                });
+                
             } else {
                 console.error('Error al obtener el producto:', result.error);
             }
+           
         });
     } else {
         console.error('No se encontró ningún ID de producto en localStorage.');
