@@ -10,19 +10,39 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/products.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+  <!-- INICIO DE NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg navbar-white bg-white">
+    <!-- Envoltorio de contenedor -->
+    <div class="container-fluid">
+      <!-- Toggle button / BOTÓN DE ALTERNANCIA-->
+
+      <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+
+      <!--FIN BOTON DE ALTERNANCIA-->
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+
+          <img src="img/logo-e-commerce.png" height="75" alt="Logo e-commerce" loading="lazy" />
+
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -30,38 +50,158 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <main class="pb-5 container">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-</body>
 
+        </ul>
+        <!-- Left links -->
+      </div>
+
+      <!-- Collapsible wrapper -->
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <!-- Icon -->
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+
+        </a>
+
+        <!-- Notifications -->
+        <div class="dropdown">
+          <a data-mdb-dropdown-init class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
+            id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+            <i class="fas fa-bell"></i>
+            <span class="badge rounded-pill badge-notification bg-danger"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#">Some news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Another news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+
+          </ul>
+        </div>
+        <!-- Avatar -->
+        <div class="dropdown">
+          <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+            id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+              alt="Black and White Portrait of a Man" loading="lazy" />
+
+            <span id="username" class="ms-2"> <!-- Nombre de usuario/email aquí --> </span>
+
+
+
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li>
+              <a class="dropdown-item" href="#">Mi perfil</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Configuración</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+
+  <!--FIN DE NAVBAR -->
+
+
+  <!-- A partir de aquí viene la imagen principal y productos -->
+
+  <section class="fondo_img_principal">
+    <section class="fondo_img_principal">
+      <img src="img/imagen_principal_auto.jpg" alt="Wallpaper Auto" id="img_princ">
+    </section>
+
+    <main class="container" id="prod_grid">
+      <h2>Descubre nuestros autos</h2>
+      <h4>Autos de alta gama preparados para tus largos viajes.</h4>
+
+
+      <!-- Filtros y opciones de orden -->
+
+      <div class="barra-filtros align-content-md-center">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="min-precio">Precio mínimo:</label>
+            <input type="number" id="min-precio" class="form-control" placeholder="Min">
+          </div>
+          <div class="col-md-4">
+            <label for="max-precio">Precio máximo:</label>
+            <input type="number" id="max-precio" class="form-control" placeholder="Max">
+          </div>
+          <div class="col-md-4">
+            <label for="sort-options">Ordenar por:</label>
+            <select id="sort-options" class="form-control">
+              <option value="relevante">Relevancia</option>
+              <option value="precio-asc">Precio Ascendente</option>
+              <option value="precio-desc">Precio Descendente</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- Buscador -->
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <input type="search" id="search-box" class="form-control" placeholder=" Busca tu artículo aquí">
+          </div>
+        </div>
+      </div>
+
+      <!--FIN DE IMG PRINCIPAL-->
+
+      <!--CONTENIDO DE PRODUCTOS, TARJETAS-->
+
+      <div class="product">
+        <div class="row" id="product-list">
+
+          <!-- Los productos se agregarán aquí -->
+
+        </div>
+      </div>
+
+      <!--FIN CONTENIDO DE PRODUCTOS-->
+
+
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+
+    <script src="js/login.js"></script> <!-- acceso a js login para que muestre el usuario en el navbar-->
+
+</body>
 </html>
+

@@ -1,0 +1,307 @@
+html {
+    scroll-behavior: smooth;
+    padding:0;
+    margin:0;
+    background-color: #fff !important;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    
+   
+}
+/* INICIO ESTILOS NAVBAR */
+
+nav.navbar {
+    background-color: transparent !important;
+    position: absolute !important;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+    display: flex !important;
+    color: #f3e7e7 !important;
+    font-size: 1rem; 
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+nav.navbar .navbar-nav .nav-link {
+    color: #fffefe !important;
+    padding: 1rem !important;
+}
+
+nav .navbar-nav .nav-link:hover {
+    color: #0f1118 !important; 
+    background-color: #8bb8c09a; 
+    border-radius: 0.3125rem;
+}
+
+/* Estilos del botón de alternancia (menu hamburguesa) */
+
+.navbar-toggler {
+    color: #fff !important;
+}
+/*img de usario*/
+#img_princ{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*estilos del usuario*/
+#username {
+    color: #fdfdfd; 
+}
+
+/*estilos de flechitas de menu desplegables*/
+
+.dropdown-toggle::after {
+    color: #fff;
+  }
+/*FIN ESTILOS NAVBAR*/
+
+/*COMIENZA ESTILOS DEL CONTENIDO DE LA PÁGINA*/
+
+/*estilos de portada (es el carrusel)*/
+#portada {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    margin-top: 0;
+    
+  }
+
+#portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/*fin estilos portada*/
+
+
+/*específico carrusel*/
+
+
+.carousel-container {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    z-index: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover;
+}
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: -2px !important;
+    z-index: 2 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+.gradiente {
+    position: absolute;
+    top: 60vh; 
+    left: 0;
+    width: 100%;
+    height: 40vh; 
+    background: linear-gradient(0deg, rgba(0,0,0) 0%, rgba(228,226,222,0) 86%);
+    z-index: 1; 
+}
+
+/*TIULO DEL PRODUCTO*/
+
+#product-description h1 {
+   
+    font-size: 5.5em;
+    text-align: left;
+    padding: 2.5rem;
+    
+}
+#product-description .category {
+    font-size: 0.4em;
+    color: gray;
+    margin-left: 10px;
+}
+
+
+#product-description {
+    padding: 20px;
+    color: rgb(245, 245, 234);
+    margin-top: 20px;
+    text-align: left;    
+}
+
+
+/*FIN TITULO DEL PRODUCTO*/
+
+
+/*DESCRIPCION DEL PRODUCTO*/
+
+.viewport-2 {
+    position: relative;
+    margin-top: 0; 
+    top: -10vh; 
+    background-color: rgb(0, 0, 0);
+    height: auto;
+    flex: 1;
+}
+
+#product-description p {
+    text-align: left;
+    font-size: 1.7em;
+    padding-top: 1rem;
+    padding-left: 3.5rem;
+}
+
+/*INFO PRODUCTO*/
+
+.flex {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10rem;
+    margin-left: 3.5rem;
+   
+    padding-top: 3rem;
+    
+}
+
+.product-detail{
+    padding: 0 .5rem; /*0 arriba .5 a los lados*/
+    position: relative; /* Para usar ::before */
+}
+
+.product-detail:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0rem;
+    width: 1px;
+    height: 80%;
+    background: #fff;
+    top: 0;
+}
+
+
+.flex span {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fdfdfd;
+
+}
+/*FIN INFO PRODUCTO*/
+
+
+
+/*CARDS PRODUCTOS RELACIONADOS*/
+
+
+
+#related-products-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+   padding-top: 0;
+   
+   
+}
+
+
+.related-product {
+    width: 12.5rem; 
+    margin: 0.625rem;
+    text-align: center;
+    padding-top: 0;
+    
+
+}
+
+
+.related-products h2 {
+    color: #fff;
+    text-align: left;
+    padding-left: 20rem;
+    position: relative;
+    margin-top: -3rem;
+}
+.related-products h2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 18rem; 
+    width: 1px;
+    height: 80%; 
+    background: #fff;
+    top: 10%; 
+}
+
+
+.card {
+    background-color: transparent; 
+    border: none; 
+    color: #fdfdfd;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.card:hover {
+    cursor: pointer; 
+    transform: scale(1.05); 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-title {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;;
+    
+}
+
+
+
+
+/*IR AGREGANDO RESPONSIVIDAD*/
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 6vw;
+        bottom: 15vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 8vw;
+        bottom: 20vh;
+    }
+}
