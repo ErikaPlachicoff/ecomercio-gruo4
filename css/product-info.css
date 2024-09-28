@@ -363,3 +363,30 @@ nav .navbar-nav .nav-link:hover {
   .rating-submit:hover {
     color: #fff
   }
+  /*Carrousel*/
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');*
+  {margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif}
+    .container{
+    padding: 50px 40px 20px;margin-top: 20px;
+    margin-bottom: 20px;overflow: hidden;
+    box-shadow: 5px 5px 25px #a7a7a7}
+    .tag{text-align: center;font-size: 1.1rem}
+    .fa-heart{color: rgba(255, 230, 0, 0.959);font-size: 30px}
+    .card{height: 320px;padding: 10px 20px;border: none;box-shadow: -1px 3px 5px #a7a7a7}
+    .testimonial{font-size: 0.9rem;line-height: 1.4rem;font-weight: 500}
+    .active-star{color: #FBC02D;margin-bottom: 8px}
+    .active-star:hover{color: #F9A825;cursor: pointer}
+    .profile{padding-top: 10px}.name{font-weight: 700}
+    .designation{font-size: 0.84rem;font-weight: 600}
+    .owl-carousel{margin-bottom: 15px}
+    .owl-carousel .owl-stage-outer
+    {padding: 40px 10px;height: 380px}
+    .owl-carousel .owl-item img
+    {width: 45px !important;height: 45px;border-radius: 50%;object-fit: cover}
+    .owl-theme .owl-nav [class*='owl-']
+    {border-radius: 50% !important;background: inherit !important;border: 3px solid #bbb;color: #bbb !important}
+    .owl-theme .owl-nav [class*='owl-']:hover{border: 3px solid #1010ca;color: #1010ca !important}
+    @media(max-width: 575.5px){.container{margin: 0px;padding: 20px}}
+    /*Fin Carrousel*/
