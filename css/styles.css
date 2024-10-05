@@ -6,7 +6,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#fdbb2d", GradientType=1);
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed; oculto para que no acompañe mientras hace scroll*/
   background-position: center;
   font-family: 'Arial, Helvetica', sans-serif !;
 }
