@@ -177,12 +177,11 @@
         </div>
          <!-- Aquí empieza la sección de calificaciones-->
         <!-- Formulario de calificación -->
-  <div id="calificacion-form">
+         <div class="calificationForm"></div>
+  <div id="calification-form" class="calification-form">
     <h2>Califica este producto</h2>
-    <div class="mb-3">
-      <label for="comentario" class="form-label">Escribe tu comentario:</label>
-      <textarea class="form-control" id="comentario" rows="3" required></textarea>
-  </div>
+    <div id="calification-form-container"></div>
+    <!--Estrellas-->
     <div class=" d-flex justify-content-center mt-5">
       <div class=" text-center mb-5">
               <div class="rating"> <input type="radio" name="rating" value="5" id="5">
@@ -191,9 +190,27 @@
                 <label for="3">☆</label> <input type="radio" name="rating" value="2" id="2">
                 <label for="2">☆</label> <input type="radio" name="rating" value="1" id="1">
                 <label for="1">☆</label> </div>
-              <div class="buttons  mt-0"> <button class="btn btn-info px-4 py-1 rating-submit ">Enviar</button> </div>
-          </div>
-      </div>
+    <!--Box Comentarios-->
+    <div class="mb-3">
+      <label for="comentario" class="form-label">Escribe tu comentario:</label>
+  <div class="comment-area"></div>
+  <textarea class="form-control" placeholder="¿Que te parece nuestro producto?" rows="4"></textarea>          
+</div>     
+        
+</div>
+
+<!--Botones de enviado-->
+</div>
+<div class="text-center pt-1 mb-5 pb-1">
+  <div class="d-flex justify-content-center mb-3">
+    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary fa-lg" type="submit"  type="ingresar">Enviar</button>
+    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger ms-3" >Cancelar</button>
+  </div>
+</div>
+ <!--Fin Botones de enviado-->
+
+
+
   </div>
     
     <div id="mensaje-gracias" style="display:none;" class="alert alert-success mt-3">
@@ -201,7 +218,6 @@
     </div>
 <!--Fin formulario-->
 <!--Carrousel-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script> <div class="container rounded"> <div class="d-flex justify-content-center fas fa-heart"></div> <p class="tag">Our customers love</p> <h1 class="text-primary text-center head">What we do</h1> <div class="owl-carousel owl-theme"> <div class="owl-item"> <div class="card d-flex flex-column"> <div class="mt-2"> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star-half-alt active-star"></span> </div> <div class="main font-weight-bold pb-2 pt-1">Great Service</div> <div class="testimonial"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolores molestias veniam inventore itaque eius iure omnis, temporibus culpa id. </div> <div class="d-flex flex-row profile pt-4 mt-auto"> <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="rounded-circle"> <div class="d-flex flex-column pl-2"> <div class="name">Megan</div> <p class="text-muted designation">CEO of My Company</p> </div> </div> </div> </div> <div class="owl-item"> <div class="card d-flex flex-column"> <div class="mt-2"> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star-half-alt active-star"></span> </div> <div class="main font-weight-bold pb-2 pt-1">Great Service</div> <div class="testimonial"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolores molestias veniam inventore itaque eius iure omnis, temporibus culpa id. </div> <div class="d-flex flex-row profile pt-4 mt-auto"> <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="rounded-circle"> <div class="d-flex flex-column pl-2"> <div class="name">Megan</div> <p class="text-muted designation">CEO of My Company</p> </div> </div> </div> </div> <div class="owl-item"> <div class="card d-flex flex-column"> <div class="mt-2"> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star-half-alt active-star"></span> </div> <div class="main font-weight-bold pb-2 pt-1">Great Service</div> <div class="testimonial"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolores molestias veniam inventore itaque eius iure omnis, temporibus culpa id. </div> <div class="d-flex flex-row profile pt-4 mt-auto"> <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="rounded-circle"> <div class="d-flex flex-column pl-2"> <div class="name">Megan</div> <p class="text-muted designation">CEO of My Company</p> </div> </div> </div> </div> <div class="owl-item"> <div class="card d-flex flex-column"> <div class="mt-2"> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star-half-alt active-star"></span> </div> <div class="main font-weight-bold pb-2 pt-1">Great Service</div> <div class="testimonial"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolores molestias veniam inventore itaque eius iure omnis, temporibus culpa id. </div> <div class="d-flex flex-row profile pt-4 mt-auto"> <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="rounded-circle"> <div class="d-flex flex-column pl-2"> <div class="name">Megan</div> <p class="text-muted designation">CEO of My Company</p> </div> </div> </div> </div> <div class="owl-item"> <div class="card d-flex flex-column"> <div class="mt-2"> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star active-star"></span> <span class="fas fa-star-half-alt active-star"></span> </div> <div class="main font-weight-bold pb-2 pt-1">Great Service</div> <div class="testimonial"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni dolores molestias veniam inventore itaque eius iure omnis, temporibus culpa id. </div> <div class="d-flex flex-row profile pt-4 mt-auto"> <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" class="rounded-circle"> <div class="d-flex flex-column pl-2"> <div class="name">Megan</div> <p class="text-muted designation">CEO of My Company</p> </div> </div> </div> </div> </div> </div>
 
 <!--Fin Carrousel-->
         </div>
