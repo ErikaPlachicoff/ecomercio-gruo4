@@ -16,44 +16,60 @@
 
 </head>
 <body>
-  <!-- INICIO DE NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-white bg-white">
-  <!-- Envoltorio de contenedor -->
+<!-- INICIO DE NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <!-- Toggle button / BOTÓN DE ALTERNANCIA-->
-
+    <!-- Botón del menú hamburguesa -->
     <button
-      data-mdb-collapse-init
       class="navbar-toggler"
       type="button"
-      data-mdb-target="#navbarSupportedContent"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <i class="fas fa-bars"></i>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!--FIN BOTON DE ALTERNANCIA-->
-    
-    <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+    <!-- Logo (se mantendrá fuera del collapse) -->
+    <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+      <img src="img/logo-e-commerce.png" height="75" alt="Logo e-commerce" loading="lazy" />
+    </a>
 
-        <img
-        src="img/logo-e-commerce.png" 
-          height="75"
-          alt="Logo e-commerce"
-
-          loading="lazy" 
-
-        />
+    <!-- Íconos de carrito, notificaciones y menú desplegable de usuario fuera del contenedor colapsable -->
+    <div class="d-flex align-items-center order-lg-3"> 
+      <a class="text-reset me-3" href="#">
+        <i class="fas fa-shopping-cart"></i>
       </a>
-      <!-- Left links -->
+      <div class="dropdown">
+        <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button">
+          <i class="fas fa-bell"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Some news</a></li>
+          <li><a class="dropdown-item" href="#">Another news</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="my-profile.html" id="navbarDropdownMenuAvatar" role="button">
+          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Avatar" loading="lazy" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+          <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+          <li><a class="dropdown-item" href="#">Configuración</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contenedor del menú hamburguesa (menu collapse) -->
+    <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent"> 
+      <!-- Menú de navegación -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
@@ -62,124 +78,60 @@
         <li class="nav-item">
           <a class="nav-link" href="sell.html">Vender</a>
         </li>
-
       </ul>
-      <!-- Left links -->
+
+      <!-- Nombre de usuario en pantallas grandes -->
+      <span class="d-none d-lg-inline" id="username"></span>
+
+      <!-- Nombre de usuario en pantallas pequeñas dentro del menú hamburguesa -->
+      <span class="d-lg-none my-2" id="username-small"></span>
     </div>
-    <!-- Collapsible wrapper -->
-
-    <!-- Right elements -->
-    <div class="d-flex align-items-center">
-      <!-- Icon -->
-      <a class="text-reset me-3" href="#">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-
-      <!-- Notifications -->
-      <div class="dropdown">
-        <a
-          data-mdb-dropdown-init
-          class="text-reset me-3 dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bell"></i>
-          <span class="badge rounded-pill badge-notification bg-danger"></span>
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-
-        </ul>
-      </div>
-      <!-- Avatar -->
-      <div class="dropdown">
-        <a
-          data-mdb-dropdown-init
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuAvatar"
-          role="button"
-          aria-expanded="false"
-        >
-
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            class="rounded-circle"
-            height="25"
-            alt="Black and White Portrait of a Man"
-            loading="lazy"
-          />
-
-          <span id="username" class="ms-2"> <!-- Nombre de usuario/email aquí --> </span>
-          
-
-
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuAvatar"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Mi perfil</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Configuración</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- Right elements -->
   </div>
-  <!-- Container wrapper -->
 </nav>
-<!--FIN DE NAVBAR -->
-    <main>
-        <div class="container-fluid p-0">
-          <div id="portada" class="container-fluid p-0" >
-            <h1 id="name">
-              
-            </h1>
+<!-- FIN DE NAVBAR -->
 
-          </div>
-                          
-                  <div id="product-list">
-                        <!-- Aquí se agregará dinámicamente el carrusel del producto -->
-                  </div>
-                <div class="gradiente"> 
-                  
-                </div>
-               
-        <div class="viewport-2">
-                    <div id="product-description" >
-                        <!-- Aquí se agregará dinámicamente la descripción del producto -->
-                    </div>
-            
-            <div class="relatedContent">
-            <div id="related-products" class="related-products">
-              <h2>Productos Relacionados</h2>
-            <div id="related-products-container" ></div>
-                
-            </div>
-          </div>
+  <main>
+
+  <div id="portada">
+      <div class="gradiente show-gradiente"></div>
+      <!-- Aquí se agregará dinámicamente el carrusel del producto -->
+      <h1 id="name"></h1>
+  </div>
+
+  <div class="viewport-2">
+      <div id="product-description">
+          <!-- Aquí se agregará dinámicamente la descripción del producto -->
+      </div>
+       <!-- Sección de Comentarios con Carrusel de Reseñas -->
+       <section class="Comenterios">
+        <div class="container-fluid px-1 py-5 mx-auto">
+           <div class="row justify-content-center">
+               <div class="col-xl-12 col-lg-12 col-md-12 col-12 text-center mb-5">
+                   <!-- Carrusel de Reseñas -->
+                   <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+                       <!-- Indicadores del carrusel -->
+                       <div class="carousel-indicators" id="carouselIndicators">
+                      </div>
+               <!-- Contenido del carrusel -->
+            <div class="carousel-inner" id="carouselInner">
+         <!-- Reseñas -->
+         <div class="carousel-item active">
+       </div>
+      </div>
         </div>
-        </div>
-    </main>
+    </div>
+      </div>
+  </section>
+  </div>
+
+   <!-- Productos Relacionados -->
+  <div id="related-products" class="related-products">
+      <div id="related-products-container" class="row col-12">
+          <h2>Productos Relacionados</h2>
+          <!-- Aquí se agregarán dinámicamente las tarjetas de productos relacionados -->
+      </div>
+  </div>
+</main>
     <footer class="text-muted">
         <div class="container">
             <p class="float-end">
