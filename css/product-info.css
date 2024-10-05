@@ -79,9 +79,7 @@ nav .navbar-nav .nav-link:hover {
     object-fit: cover;
   }
 
-
-/fin estilos portada/
-
+/*fin estilos portada*/
 
 
 /específico carrusel/
@@ -211,9 +209,12 @@ nav .navbar-nav .nav-link:hover {
 
 
 }
-/FIN INFO PRODUCTO/
+/*FIN INFO PRODUCTO*/
 
-/CARDS PRODUCTOS RELACIONADOS/
+
+
+/*CARDS PRODUCTOS RELACIONADOS*/
+
 
 
 #related-products-container {
@@ -286,25 +287,8 @@ nav .navbar-nav .nav-link:hover {
     font-size: 16px;
     margin-top: 10px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
- 
-}
-
-
-/ESTILOS CARDS COMENTARIOS/
-
-
-
-
-.text-white{
-width: 300px;
-height: 80px;
-margin: 0 auto; /* Centrar el margen */
-background-color: #FBC02D;
-color: #fff;
-text-align: center;
-border-radius: 3px;
-font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;;
+    
 }
 
 
@@ -557,31 +541,4 @@ cursor: pointer;
 }
   /Carrousel/
  
-    /Fin Carrousel/
-
-    
-.card1 {
-padding: 20px; /* Espaciado más pequeño */
-}
-
-
-.rating-box {
-width: 100px; /* Ajustar tamaño */
-height: 100px; /* Ajustar tamaño */
-}
-
-
-.rating-bar {
-max-width: 90%; /* Reducir el ancho máximo */
-}
-
-
-.profile-pic,
-.pic {
-width: 25vw; /* Ajustar tamaño para pantallas más pequeñas */
-}
-
-
-.content {
-font-size: 16px; /* Ajustar tamaño de fuente */
-}
+    /*Fin Carrousel*/
