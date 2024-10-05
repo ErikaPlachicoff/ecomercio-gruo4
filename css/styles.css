@@ -1,10 +1,14 @@
-body{
-  background: linear-gradient(234.62deg, #9A9A9A -13.15%, #FFFFFF 44.38%, #999999 110.02%);
+body {
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 0) 86%);
+  background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 0) 86%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(253, 187, 45, 0) 86%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#fdbb2d", GradientType=1);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  font-family: 'Arial, Helvetica', sans-serif!;
+  font-family: 'Arial, Helvetica', sans-serif !;
 }
 
 
