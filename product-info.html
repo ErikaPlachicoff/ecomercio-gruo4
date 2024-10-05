@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eMercado - Todo lo que busques está aquí</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/product-info.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
-
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>eMercado - Todo lo que busques está aquí</title>
+   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+   <link href="css/font-awesome.min.css" rel="stylesheet">
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/styles.css" rel="stylesheet">
+   <link href="css/product-info.css" rel="stylesheet">
+   <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <!-- INICIO DE NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -96,8 +96,7 @@
       <div class="gradiente show-gradiente"></div>
       <!-- Aquí se agregará dinámicamente el carrusel del producto -->
       <h1 id="name"></h1>
-  </div>
-
+  </div> 
   <div class="viewport-2">
       <div id="product-description">
           <!-- Aquí se agregará dinámicamente la descripción del producto -->
@@ -122,36 +121,86 @@
     </div>
       </div>
   </section>
-  </div>
-
-   <!-- Productos Relacionados -->
-  <div id="related-products" class="related-products">
-      <div id="related-products-container" class="row col-12">
-          <h2>Productos Relacionados</h2>
-          <!-- Aquí se agregarán dinámicamente las tarjetas de productos relacionados -->
+          </section>
+      <section>
+            <!-- Aquí empieza la sección de calificaciones-->
+        <!-- Formulario de calificación -->
+        <div class="calificationForm"></div>
+        <div id="calification-form" class="calification-form">
+          <h2>Califica este producto</h2>
+          <div id="calification-form-container"></div>
+          <!--Estrellas-->
+          <div class=" d-flex justify-content-center mt-5">
+            <div class=" text-center mb-5">
+                    <div class="rating"> <input type="radio" name="rating" value="5" id="5">
+                      <label for="5">☆</label> <input type="radio" name="rating" value="4" id="4">
+                      <label for="4">☆</label> <input type="radio" name="rating" value="3" id="3">
+                      <label for="3">☆</label> <input type="radio" name="rating" value="2" id="2">
+                      <label for="2">☆</label> <input type="radio" name="rating" value="1" id="1">
+                      <label for="1">☆</label> </div>
+          <!--Box Comentarios-->
+          <div class="mb-3">
+            <label for="comentario" class="form-label">Escribe tu comentario:</label>
+        <div class="comment-area"></div>
+        <textarea class="form-control" placeholder="¿Que te parece nuestro producto?" rows="4"></textarea>          
+      </div>     
+              
       </div>
-  </div>
-</main>
-    <footer class="text-muted">
-        <div class="container">
-            <p class="float-end">
-                <a href="#">Volver arriba</a>
-            </p>
-            <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      
+      <!--Botones de enviado-->
+      </div>
+      <div class="text-center pt-1 mb-5 pb-1">
+        <div class="d-flex justify-content-center mb-3">
+          <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary fa-lg" type="submit" type="ingresar">Enviar</button>
+          <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger ms-3" >Cancelar</button>
         </div>
-    </footer>
-    <div id="spinner-wrapper">
-        <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+      </div>
+       <!--Fin Botones de enviado-->
+      
+      
+      
         </div>
+          
+          <div id="mensaje-gracias" style="display:none;" class="alert alert-success mt-3">
+              ¡Gracias por tu calificación!
+          </div>
+      <!--Fin formulario-->
+  </section>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/product-info.js"></script>
-    <script src="js/login.js"></script>
-</body>
+   <!-- Productos Relacionados -->
+   <div id="related-products" class="related-products">
+       <h2>Productos Relacionados</h2>
+       <div id="related-products-container"></div>
+   </div>
+  
+ 
+</main>
 
+
+<footer class="text-muted">
+   <div class="container">
+       <p class="float-end">
+           <a href="#">Volver arriba</a>
+       </p>
+       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+   </div>
+</footer>
+
+
+<div id="spinner-wrapper">
+   <div class="lds-ring">
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+   </div>
+</div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/init.js"></script>
+<script src="js/product-info.js"></script>
+<script src="js/login.js"></script>
+</body>
 </html>
+ 
