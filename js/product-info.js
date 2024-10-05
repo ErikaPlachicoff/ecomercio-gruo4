@@ -1,4 +1,3 @@
-product-info.js 
 document.addEventListener('DOMContentLoaded', function() {
     // Recuperar el ID del producto seleccionado desde localStorage
     const selectedProductId = localStorage.getItem('IDproductSelect');
