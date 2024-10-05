@@ -1,3 +1,5 @@
+product-info.css
+
 html {
 
     scroll-behavior: smooth;
@@ -41,27 +43,27 @@ nav .navbar-nav .nav-link:hover {
 .navbar-toggler {
     color: #fff !important;
 }
-/*img de usario*/
+/img de usario/
 #img_princ{
     position: relative;
     width: 100%;
     height: 100%;
 }
-/*estilos del usuario*/
+/estilos del usuario/
 #username {
     color: #fdfdfd; 
 }
 
-/*estilos de flechitas de menu desplegables*/
+/estilos de flechitas de menu desplegables/
 
 .dropdown-toggle::after {
     color: #fff;
   }
-/*FIN ESTILOS NAVBAR*/
+/FIN ESTILOS NAVBAR/
 
-/*COMIENZA ESTILOS DEL CONTENIDO DE LA PÁGINA*/
+/COMIENZA ESTILOS DEL CONTENIDO DE LA PÁGINA/
 
-/*estilos de portada (es el carrusel)*/
+/estilos de portada (es el carrusel)/
 #portada {
     position: relative; 
     width: 100%;
@@ -77,12 +79,10 @@ nav .navbar-nav .nav-link:hover {
     object-fit: cover;
   }
 
-
 /*fin estilos portada*/
 
 
-
-/*específico carrusel*/
+/específico carrusel/
 
 
 .carousel-container {
@@ -128,7 +128,7 @@ nav .navbar-nav .nav-link:hover {
     z-index: 1; 
 }
 
-/*TIULO DEL PRODUCTO*/
+/TIULO DEL PRODUCTO/
 
 #product-description h1 {
    
@@ -152,10 +152,10 @@ nav .navbar-nav .nav-link:hover {
 }
 
 
-/*FIN TITULO DEL PRODUCTO*/
+/FIN TITULO DEL PRODUCTO/
 
 
-/*DESCRIPCION DEL PRODUCTO*/
+/DESCRIPCION DEL PRODUCTO/
 
 .viewport-2 {
     position: relative;
@@ -173,7 +173,7 @@ nav .navbar-nav .nav-link:hover {
     padding-left: 3.5rem;
 }
 
-/*INFO PRODUCTO*/
+/INFO PRODUCTO/
 
 .flex {
     display: flex;
@@ -186,7 +186,7 @@ nav .navbar-nav .nav-link:hover {
 }
 
 .product-detail{
-    padding: 0 .5rem; /*0 arriba .5 a los lados*/
+    padding: 0 .5rem; /0 arriba .5 a los lados/
     position: relative; /* Para usar ::before */
 }
 
@@ -211,7 +211,10 @@ nav .navbar-nav .nav-link:hover {
 }
 /*FIN INFO PRODUCTO*/
 
+
+
 /*CARDS PRODUCTOS RELACIONADOS*/
+
 
 
 #related-products-container {
@@ -284,25 +287,8 @@ nav .navbar-nav .nav-link:hover {
     font-size: 16px;
     margin-top: 10px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
- 
-}
-
-
-/*ESTILOS CARDS COMENTARIOS*/
-
-
-
-
-.text-white{
-width: 300px;
-height: 80px;
-margin: 0 auto; /* Centrar el margen */
-background-color: #FBC02D;
-color: #fff;
-text-align: center;
-border-radius: 3px;
-font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;;
+    
 }
 
 
@@ -442,32 +428,117 @@ cursor: pointer;
 
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 6vw;
+        bottom: 15vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 8vw;
+        bottom: 20vh;
+    }
+}
+/CALIFICACIONES/
+.rate {
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px
+  }
+  
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+  }
+  
+  .rating>input {
+    display: none
+  }
+  
+  .rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 30px;
+    font-weight: 300;
+    color: #FFD600;
+    cursor: pointer
+  }
+  
+  .rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+  }
+  
+  .rating>label:hover:before,
+  .rating>label:hover~label:before {
+    opacity: 1 !important
+  }
+  
+  .rating>input:checked~label:before {
+    opacity: 1
+  }
+  
+  .rating:hover>input:checked~label:before {
+    opacity: 0.4
+  }
+  
+  .buttons {
+    top: 36px;
+    position: relative
+  }
+  
+.comment-box{
     
-.card1 {
-padding: 20px; /* Espaciado más pequeño */
+    padding:5px;
 }
 
 
-.rating-box {
-width: 100px; /* Ajustar tamaño */
-height: 100px; /* Ajustar tamaño */
+
+.comment-area textarea{
+   resize: none; 
+        border: 1px solid #ad9f9f;
+}
+  
+  .rating-submit {
+    border-radius: 8px;
+    color: #fff;
+    height: auto
+  }
+  
+  .rating-submit:hover {
+    color: #fff
+  }
+  .comment-area textarea{
+    resize: none; 
+    flex-wrap: wrap; 
+         border: 1px solid #ad9f9f;
+ }
+ #calification-form-container{
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+   padding-top: 0; 
 }
 
-
-.rating-bar {
-max-width: 90%; /* Reducir el ancho máximo */
+.calification-form h2 {
+    color: #fff;
+    text-align: left;
+    padding-left: 20rem;
+    position: relative;
+    margin-top: -3rem;
 }
-
-
-.profile-pic,
-.pic {
-width: 25vw; /* Ajustar tamaño para pantallas más pequeñas */
+.calification-form h2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 18rem; 
+    width: 1px;
+    height: 80%; 
+    background: #fff;
+    top: 10%; 
 }
-
-
-.content {
-font-size: 16px; /* Ajustar tamaño de fuente */
-}
-}
-
-
+  /Carrousel/
+ 
+    /*Fin Carrousel*/
