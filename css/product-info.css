@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
     padding:0;
     margin:0;
+    overflow-x: hidden;
 }
 body {
     font-family: 'Poppins', sans-serif;
@@ -11,7 +12,7 @@ body {
 
 /* Estilos globales para la navbar */
 nav.navbar {
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.418) !important;
     position: absolute; 
     top: 0;
     left: 0;
@@ -22,13 +23,10 @@ nav.navbar {
 }
 
 nav.navbar .navbar-nav .nav-link {
-    color: #000000;
+    color: #ffffff;
     padding: .5rem;
     width: 100%;
-    background-color: #c2bfbf9a;
     margin-right: 0 10rem;
-    
-    
 }
 nav.navbar .navbar-nav {
     gap: .5rem; 
@@ -40,12 +38,11 @@ nav .navbar-nav .nav-link:hover {
 
 /* Estilos del iconos carrito y notificaciones */
 i {
-  color: #000000;
+  color: #ffffff;
   font-size: 1rem;
   padding: .5rem !important;
   border-radius: 1rem;
   border-color: #000000; 
-  background-color: #c2bfbf9a;
  
 }
 
@@ -58,15 +55,11 @@ i {
 
 /*estilos del nombre de usuario*/
 #username {
-    color: #000000; 
-    background-color: #c2bfbf9a;
+    color: #ffffff; 
     padding: .3rem;
     margin-right: 1rem;
 }
 
-#username:hover{
-    background-color: #9797959a;
-}
 
 /*estilos de flechitas de menu desplegables en iconos*/
 
@@ -149,6 +142,7 @@ i {
 }
 
 /*TIULO Y CATEGORÍA DEL PRODUCTO*/
+
 #product-description{
     text-align: center;
     margin: 2rem;
@@ -157,15 +151,17 @@ i {
 }
 
 #product-description h1 {
-    font-size: 10em;
+    font-size: 6em;
     padding-top: 10rem;
     z-index: 3;
     position: relative;
-    
+    display: inline-block;
 }
 #product-description .category {
-    font-size: 3em;
+    font-size: 2em;
     color: gray; 
+    position: relative;
+    margin-left: 1em;
 }
 /*FIN TITULO DEL Y CATEGORÍA PRODUCTO*/
 
@@ -173,10 +169,10 @@ i {
 /*DESCRIPCION DEL PRODUCTO*/
 
 #product-description p {
-    text-align: left;
-    font-size: 4em;
-    padding-top: 2rem;
-    padding-left: 3.5rem;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 4rem;
+    padding-left: 4rem;
     
 }
 
@@ -440,7 +436,7 @@ padding-bottom: 10px;
     
     
     
-   
+    
     
     
     .card1 {
@@ -586,9 +582,6 @@ text-align: center;
 border-radius: 3px;
 font-family: 'Courier New', Courier, monospace;
 }
-
-
-
 
 
 
@@ -817,6 +810,9 @@ cursor: pointer;
     gap: 20px; 
    padding-top: 0; 
 }
+.form-label{
+   color: #fff;
+}
 
 .calification-form h2 {
     color: #fff;
@@ -885,7 +881,7 @@ font-size: 16px; /* Ajustar tamaño de fuente */
     /* Ajustes de la navbar */
     .navbar-collapse {
         width: auto;
-        background-color: #ffffff50; 
+        background-color: rgba(0, 0, 0, 0.418) !important;
         position: absolute; 
         top: 100%; 
         left: 0; 
@@ -900,9 +896,10 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        position: relative !important;
-        background-color: transparent !important;
+        position: relative !important;    
+        background-color: rgba(0, 0, 0, 0.418) !important;
         padding-bottom: 0 !important;
+        color: white;
     }
 
     button.navbar-toggler {
@@ -918,6 +915,7 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         align-items: center;
         margin: 0;
         padding: 0;
+        
     }
 
     /* Ajustar tamaño del logo */
@@ -933,6 +931,7 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         flex-direction: column; 
         align-items: flex-start;
         width: 10% !important; 
+        
     }
 
     a.nav-link {
@@ -943,14 +942,14 @@ font-size: 16px; /* Ajustar tamaño de fuente */
     }
 
     a.nav-link:hover {
-        background-color: rgb(151, 151, 151) !important; /* Cambia esto a un color diferente para probar */
-        color: rgb(7, 7, 7) !important;
+        background-color: rgba(0, 0, 0, 0.418) !important;
+        color:white;
     }
 
     /* Estilos para el nombre de usuario en pantalla pequeña */
     #username-small {
         margin: .5rem;
-        color: #000000;
+        color: #ffffff;
         text-align: left;
         padding: .1rem;
         border-radius: .5rem;
@@ -970,9 +969,10 @@ font-size: 16px; /* Ajustar tamaño de fuente */
 
     /* Estilos de abajo */
     .description h1 {
-        font-size: 24px !important;
-        padding-left: 0 !important;
-        padding-top: 2rem !important;
+        font-size: 32px !important;
+        padding-top: 3rem !important;
+        position: relative;
+        display: flex;
     }
 
     .description p, 
@@ -982,6 +982,8 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         font-size: .9rem !important;
         justify-content: center !important;
         padding-left: 0 !important;
+        position: relative;
+        display: flex;
     }
 
     .product-detail {
@@ -1038,6 +1040,14 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         cursor: pointer;
     }
 
+    .calification-form h2{ 
+        text-align: left;
+        padding-left: 3em;
+    }
+    .calification-form h2::before {
+        left: 2em;
+    }
+}
     /* Media Queries para pantallas más pequeñas */
     @media (max-width: 768px) {
         .card1 {
@@ -1061,5 +1071,37 @@ font-size: 16px; /* Ajustar tamaño de fuente */
         .content {
             font-size: 16px; /* Ajustar tamaño de fuente */
         }
+
+
+        #portada{
+            height: 58vh;
+        }
+        .description h1 {
+            font-size: 50px !important;
+            padding-top: 0rem !important;
+            position: relative;
+            display: flex;
+        }
+    
+        .description p, 
+        .description span {
+            margin: 2rem;
+            overflow-wrap: break-word !important;
+            font-size: 1.5rem !important;
+            justify-content: center !important;
+            padding-left: 0 !important;
+            position: relative;
+            display: flex;
+        }
+
+        
+        .calification-form h2{ 
+            text-align: left;
+            padding-left: 3em;
+        }
+        .calification-form h2::before {
+            left: 2em;
+        }
     }
-}
+
+
