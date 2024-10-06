@@ -528,6 +528,7 @@ cursor: pointer;
     resize: none; 
     flex-wrap: wrap; 
          border: 1px solid #ad9f9f;
+         color: #fff;
  }
  #calification-form-container{
     display: flex;
@@ -546,12 +547,15 @@ cursor: pointer;
 .calification-form h2::before {
     content: "";
     display: block;
-    position: absolute;
+    position: right;
     left: 18rem; 
     width: 1px;
     height: 80%; 
     background: #fff;
     top: 10%; 
+}
+.form-label {
+    color: white;
 }
   /*Carrousel*/
  
