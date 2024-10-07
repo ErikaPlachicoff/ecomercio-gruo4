@@ -238,7 +238,9 @@ i {
     gap: 20px; 
    padding-top: 0;
    
-   
+}
+#related-products-container h5{
+   color: white;
 }
 
 .related-products h2 {
