@@ -275,6 +275,78 @@ document.addEventListener('DOMContentLoaded', function() {
     }
  }
  
+ //Mostrar comentario como una calificacion mas de las referentes al producto
+ // Agregar evento al botón "Enviar"
+const sendButton = document.querySelector('.btn.btn-primary');
+sendButton.addEventListener('click', function() {
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const commentText = document.querySelector('textarea').value;
+
+    // Validar que se haya seleccionado una calificación y se haya escrito un comentario
+    if (rating && commentText.trim() !== "") {
+        const score = rating.value;
+        const user = "Usuario Anónimo"; // Aquí se podría obtener el usuario
+
+        // Crear un nuevo comentario
+        const newComment = {
+            user: user,
+            description: commentText,
+            score: score,
+            dateTime: new Date().toISOString() 
+        };
+
+        // Agregar el nuevo comentario al carrusel
+        addCommentToCarousel(newComment);
+
+        // Limpiar el formulario
+        document.querySelector('textarea').value = '';
+        document.querySelector('input[name="rating"]:checked').checked = false;
+
+        // Mostrar mensaje de agradecimiento
+        document.getElementById('mensaje-gracias').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('mensaje-gracias').style.display = 'none';
+        }, 3000); // Oculta el mensaje después de 3 segundos
+    } else {
+        alert('Por favor, selecciona una calificación y escribe un comentario.');
+    }
+});
+
+// Función para agregar un comentario al carrusel
+function addCommentToCarousel(comment) {
+    const carouselInner = document.getElementById('carouselInner');
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('carousel-item');
+
+    // Si es el primer comentario, hacerlo activo
+    if (carouselInner.children.length === 0) {
+        itemDiv.classList.add('active');
+    }
+
+    itemDiv.innerHTML = `
+        <div class="card1">
+            <div class="card-body">
+                <h2 class="text-white">Reseñas de Usuarios</h2>
+                <h5 class="card-title">${comment.user}</h5>
+                <p class="card-text">${comment.description}</p>
+                <p>Puntuación: ${renderStars(comment.score)} | Fecha: ${new Date(comment.dateTime).toLocaleString()}</p>
+            </div>
+        </div>
+    `;
+    
+    carouselInner.appendChild(itemDiv);
+
+    // Agregar un nuevo indicador
+    const carouselIndicators = document.getElementById('carouselIndicators');
+    const indicator = document.createElement('button');
+    indicator.setAttribute('type', 'button');
+    indicator.setAttribute('data-bs-target', '#reviewCarousel');
+    indicator.setAttribute('data-bs-slide-to', carouselInner.children.length - 1);
+    if (carouselInner.children.length === 1) indicator.classList.add('active');
+    indicator.classList.add('carousel-indicator');
+    carouselIndicators.appendChild(indicator);
+}
+
  
  // Función para renderizar estrellas basadas en la puntuación
  function renderStars(score) {
