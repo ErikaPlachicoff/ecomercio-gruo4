@@ -1,100 +1,303 @@
-h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-    color: rgba(119, 73, 248, 1);
-    text-shadow: 1px 1px 2px #110909;
-    border-bottom: 2px solid rgb(47, 31, 92); 
-    
-    padding-bottom: 10px; 
+.product {
+    display: flex;
+    justify-content: center; /* Centrar las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding-top: 6em;
 }
 
-/* Estilo de la tarjeta */
+h2 {
+    position: relative !important;
+    font-size: 3rem;
+    text-align: center !important;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #22223C;
+    text-shadow: 1px 1px 2px #110909;
+    padding-top: 2rem;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Inicia el borde desde el centro */
+    transform: translateX(-100%);
+    /* Centra el borde */
+    width: 25%;
+    /* Esto es para ajustar la longitud del borde */
+    border-bottom: 2px solid #F5B963;
+    /* Mantiene el estilo del borde */
+}
+
+h4 {
+
+    font-size: 1.2rem;
+    text-align: center !important;
+    padding: 0 3rem 6rem 3rem;
+    color: #47475F;
+}
+
+
+#img_princ{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*estilos del usuario*/
+#username {
+    color: #fdfdfd; 
+}
+
+/*estilos de flechitas de menu desplegables*/
+.dropdown-toggle::after {
+    color: #fff;
+}
+
+/*Estilo de la tarjeta*/
+
+/* Ajustes para tarjetas */
+
 .card {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(27, 25, 25, 0.1); 
-    transition: transform 0.2s; 
+    border-radius: 2rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(27, 25, 25, 0.1);
+    transition: transform 0.2s;
     background: #c0c9e6;
-    border-color: #0d2b66;
+    border: 1px solid #0d2b66;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    min-height: 400px; /* Altura mínima para todas las tarjetas */
+}
+
+.separacion-cards{
+    padding-bottom: 10%;
 }
 
 .card:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .card-img-top {
-    border-top-left-radius: 15px; 
-    border-top-right-radius: 15px;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones y rellene el contenedor */
 }
 
 .card-body {
-    text-align: center; 
+    text-align: center;
     padding: 2rem;
+}
+/*Cambios*/
+
+/* Contenedor de las tarjetas */
+
+
+#prod_grid{
+    padding-top: 2em;
+}
+
+#search-box{
+    width: 66%;
+}
+
+.barra-filtros{
+    background-color: #0d2b661c;
+    border-radius: 1.5em;
+    padding:2em;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #22223ce1;
+}
+
+/* Asegurar que todas las tarjetas tengan el mismo margen inferior */
+.separacion-cards {
+    margin-bottom: 20px;
+}
+
+
+/* Mantener el mismo comportamiento en pantallas pequeñas */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        height: auto; /* Permitir que la altura sea dinámica en pantallas pequeñas */
+    }
+
+    .card-img-top {
+        height: auto; /* Permitir que la imagen se ajuste automáticamente en pantallas pequeñas */
+    }
+}
+
+/* Contenedor de la imagen con el overlay */
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+/* Overlay sobre la imagen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+/* Ajustes para la lista dentro del overlay */
+.overlay .list-group-item {
+    background: transparent;
+    border: none;
+    color: white;
 }
 
 /* Estilo del nav */
+
 nav.navbar {
     background: rgba(53, 73, 125, 1) !important;
     position: relative !important;
     display: flex !important;
     color: #f3e7e7 !important;
-    box-shadow: 0 4px 8px rgba(21, 57, 78, 0.651);
-    
+
+    box-shadow: 0 0.25rem 0.5rem rgba(21, 57, 78, 0.651); 
+    padding: 0rem !important;
+
 }
+
+
 
 nav.navbar .navbar-nav .nav-link {
     color: #fffefe !important;
     padding: 1rem !important;
-    margin-right: 20px !important;
-    margin-left: 5rem !important;
 }
 
 nav .navbar-nav .nav-link:hover {
+
     color: #212a47 !important; 
     background-color: #8bb8c0; 
-    border-radius: 5px; 
+    border-radius: 0.3125rem;
+}
+/*menu hamburguesa */
+.navbar-toggler{
+    color: #fff !important;
 }
 
-/* Posicionamiento absoluto */
-.logo {
-    position: absolute;
-    top: 1rem;          
-    left: 20px;         
-    z-index: 3;         
+
+/* Ajustes Resolución Estándar */
+
+@media (min-width: 1366px) {
+    #img_princ {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        padding: 0 5rem 6rem 5rem;
+    }
 }
 
-.logo img {
-    width: 100px;       
-    height: 50px;
+/* Ajustes para Tableta en Modo Vertical */
+
+@media (max-width: 1024px) and (min-width: 768px) {
+
+    /* Ajustes de la imagen principal */
+
+    .fondo_img_principal {
+        height: 25rem;
+    }
+
+    #img_princ {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+    .card {
+        max-width: 90%; /* Permitir que la tarjeta ocupe un poco menos del 100% del ancho */
+    }
+    .product {
+        gap: 10px; /* Espacio reducido entre tarjetas en pantallas más pequeñas */
+    }
 }
 
-.perfil {
-    position: absolute;
-    top: 1rem;
-    right: 10px;     
-    width: 50px;        
-    height: 50px;
-    z-index: 2;
-}
+/* Ajustes para Smartphone Pequeño */
 
-.perfil img {
-    width: 40px;
-    height: auto;
-    opacity: 0.8;   
-}
+@media (max-width: 568px) {
 
-.carrito {
-    position: absolute;
-    top: 0.5rem;
-    right: 80px;        
-    z-index: 2;
-}
 
-.carrito img {
-    width: 40px;
-    height: auto;
-    opacity: 0.8;
-    background-color: #fff;
-    border-radius: 10px;       
+    
+
+    #username {
+        text-align: left;
+        font-size: 0.7em;
+    }
+    .rounded-circle {
+        display: none;
+    }
+    #img_princ {
+        height: 10rem; 
+
+
+        object-fit: cover;
+    }
+
+    h2 {
+
+        font-size: 1.5rem;
+
+        margin-top: 1rem;
+    }
+
+    h4 {
+
+        font-size: 0.8rem; 
+        padding: 0 0.5rem 1rem 0.5rem;
+    }
+    /* Ajuste de las tarjetas */
+
+    .card {
+    margin-bottom: 0.5rem; 
+    }
+
+    .card-body {
+    padding: 0.5rem;
+    }
+
+    .titulos {
+    font-size: 0.9rem;
+    }
 }
