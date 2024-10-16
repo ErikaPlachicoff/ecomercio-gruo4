@@ -2,7 +2,7 @@
     'use strict';
 
     // Función que carga los datos guardados en localStorage al cargar la página
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
         // Obtener el email guardado en localStorage
         const email = localStorage.getItem('email');
         
@@ -24,7 +24,7 @@
         if (lastName) {
             document.getElementById('lastName').value = lastName;
         }
-    };
+    });
 
     // Obtener todos los formularios a los que queremos aplicarles estilos de validación personalizados de Bootstrap
     const forms = document.querySelectorAll('.needs-validation');
