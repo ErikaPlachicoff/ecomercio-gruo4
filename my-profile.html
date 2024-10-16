@@ -8,35 +8,63 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
+  <link href="css/my-profile.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
+
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <!-- INICIO DE NAVBAR -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Botón del menú hamburguesa -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+
+      <!-- Logo (se mantendrá fuera del collapse) -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+        <img src="img/logo-e-commerce.png" height="75" alt="Logo e-commerce" loading="lazy" />
+      </a>
+
+      <!-- Íconos de carrito, notificaciones y menú desplegable de usuario fuera del contenedor colapsable -->
+      <div class="d-flex align-items-center order-lg-3">
+        <a class="text-reset me-3" href="#">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <div class="dropdown">
+          <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-bell"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Some news</a></li>
+            <li><a class="dropdown-item" href="#">Another news</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="my-profile.html"
+            id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Avatar"
+              loading="lazy" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+            <li><a class="dropdown-item" href="#">Configuración</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contenedor del menú hamburguesa (menu collapse) -->
+      <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+        <!-- Menú de navegación -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -44,27 +72,90 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
         </ul>
+
+        <!-- Nombre de usuario en pantallas grandes -->
+        <span class="d-none d-lg-inline" id="username"></span>
+
+        <!-- Nombre de usuario en pantallas pequeñas dentro del menú hamburguesa -->
+        <span class="d-lg-none my-2" id="username-small"></span>
       </div>
     </div>
   </nav>
+  <!-- FIN DE NAVBAR -->
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div class="col">
+          <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">
+            <form class="row g-3 needs-validation" novalidate>
+              <h1 class="mi-perfil">Mi Perfil</h1>
+              <!-- Campo de Nombre -->
+              <div class="col-md-3 ">
+                <label for="firstName" class="form-label">Nombre*</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                <div class="valid-feedback">Nombre válido</div>
+                <div class="invalid-feedback">Introduzca un nombre válido</div>
+              </div>
+
+              <!-- Campo de Segundo Nombre -->
+              <div class="col-md-3">
+                <label for="secondName" class="form-label">Segundo nombre</label>
+                <input type="text" id="secondName" name="secondName" class="form-control">
+              </div>
+
+              <!-- Campo de Apellido -->
+              <div class="col-md-3">
+                <label for="lastName" class="form-label">Apellido*</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                <div class="valid-feedback">Apellido válido</div>
+                <div class="invalid-feedback">Introduzca un apellido válido</div>
+              </div>
+
+              <!-- Campo de E-mail -->
+              <div class="col-md-3">
+                <label for="email" class="form-label">E-mail*</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+                <div class="valid-feedback">Correo electrónico válido</div>
+                <div class="invalid-feedback">Introduzca un correo electrónico válido</div>
+              </div>
+
+              <!-- Campo de Teléfono de Contacto -->
+              <div class="col-md-4">
+                <label for="phone" class="form-label">Teléfono de contacto</label>
+                <input type="tel" id="phone" name="phone" class="form-control">
+              </div>
+
+              <!-- Campo de Foto de Perfil -->
+              <div class="col-md-4">
+                <label for="profilePic" class="form-label">Foto de perfil</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*" class="form-control">
+              </div>
+
+              <!-- Botón de Guardar Cambios -->
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </main>
+
+  <!-- Footer -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
+
+  <!-- Scripts -->
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
