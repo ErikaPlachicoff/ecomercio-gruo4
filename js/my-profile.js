@@ -3,8 +3,8 @@
 
     // Función que carga los datos guardados en localStorage al cargar la página
     document.addEventListener('DOMContentLoaded', function () {
-        // Obtener el email guardado en localStorage
-        const email = localStorage.getItem('email');
+        // Obtener el email guardado en localStorage bajo la clave 'currentUser'
+        const email = localStorage.getItem('currentUser');
         
         // Si el email no está en localStorage, redirige al usuario a la página de login
         if (!email) {
@@ -48,7 +48,7 @@
                 // Guardar los datos en localStorage
                 localStorage.setItem('name', name);
                 localStorage.setItem('lastName', lastName);
-                localStorage.setItem('email', email);
+                localStorage.setItem('currentUser', email); //corregimos el primer argumento (key).
 
                 // Mostrar un mensaje de éxito
                 alert('¡Sus datos han sido guardados exitosamente!');
