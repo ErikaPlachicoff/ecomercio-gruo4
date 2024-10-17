@@ -8,7 +8,16 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    transition: background-color 0.4s ease;
 }
+
+/*Modo oscuro*/
+
+body.dark-mode form {
+    background-color:#121212 !important;
+    }
+
+/*Fin del modo oscuro*/
 
 /* INICIO ESTILOS GLOBALES NAVBAR */
 
