@@ -163,6 +163,20 @@ footer p {
   animation-delay: -0.15s;
 }
 
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+ }
+ 
+ #profilePicPreview { width: 180px; 
+  height: 180px; 
+  display: none; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
