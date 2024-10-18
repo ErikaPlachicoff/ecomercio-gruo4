@@ -152,6 +152,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* Esto es para que aparezca la imagen actualizada en todas las navbar */
+document.addEventListener('DOMContentLoaded', function () {
+  const avatarNav = document.querySelector('#navbarDropdownMenuAvatar img'); 
+
+  // Carga la imagen de perfil desde el localStorage
+  const profilePic = localStorage.getItem('profilePic');
+
+  if (profilePic && avatarNav) {
+      avatarNav.src = profilePic; /* Y así se actualiza la imagen en todas las navbars */
+  }
+});
+
 /* A partir de aquí está el modo oscuro/claro */
 /* Esto tuve que modificarlo por unos problemas de una clase de bootstrap, para que la agregue o la quite cuando estemos en my profile y no se pierda el estilo alrededor del form*/
 document.addEventListener("DOMContentLoaded", function () {
