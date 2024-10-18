@@ -301,3 +301,11 @@ nav .navbar-nav .nav-link:hover {
     font-size: 0.9rem;
     }
 }
+
+body.dark-mode h2,h4{
+    color:white;
+}
+.dark-mode .barra-filtros{
+ color: white;
+ background-color: #292a2b;
+}
