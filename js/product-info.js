@@ -285,7 +285,7 @@ sendButton.addEventListener('click', function() {
     // Validar que se haya seleccionado una calificación y se haya escrito un comentario
     if (rating && commentText.trim() !== "") {
         const score = rating.value;
-        const user = "Usuario Anónimo"; // Aquí se podría obtener el usuario
+        //const user = "Usuario Anónimo"; // Aquí se podría obtener el usuario
 
         // Crear un nuevo comentario
         const newComment = {
