@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
  <!-- Íconos de carrito, notificaciones y menú desplegable de usuario fuera del contenedor colapsable -->
  <div class="d-flex align-items-center order-lg-3">
-   <a class="text-reset me-3" href="#">
+   <a class="text-reset me-3" href="cart.html">
      <i class="fas fa-shopping-cart"></i>
    </a>
    <div class="dropdown">
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
        <li><a class="dropdown-item" href="#">Configuración</a></li>
-       <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+       <li><a class="dropdown-item" href="login.html" id="logoutLink">Cerrar sesión</a></li>
      </ul>
    </div>
  </div>
@@ -210,3 +210,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 /* Fin del modo oscuro/claro */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Cerrar sesión - borra el usuario autenticado
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
+      
+      // Borrar información del usuario de localStorage
+      localStorage.removeItem('name');
+      localStorage.removeItem('lastName');
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('profilePic');
+  });
+});
+
