@@ -13,92 +13,22 @@
 </head>
 
 <body>
-  <!-- INICIO DE NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <!-- Botón del menú hamburguesa -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Logo (se mantendrá fuera del collapse) -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
-        <img src="img/logo-e-commerce.png" height="75" alt="Logo e-commerce" loading="lazy" />
-      </a>
-
-      <!-- Contenedor del menú hamburguesa (menu collapse) -->
-      <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
-        <!-- Menú de navegación -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-        </ul>
-
-        <!-- Nombre de usuario en pantallas grandes -->
-        <span class="d-none d-lg-inline" id="username"></span>
-
-        <!-- Nombre de usuario en pantallas pequeñas dentro del menú hamburguesa -->
-        <span class="d-lg-none my-2" id="username-small"></span>
-      </div>
-
-      <!-- Íconos de carrito, notificaciones y menú desplegable de usuario fuera del contenedor colapsable -->
-      <div class="d-flex align-items-center order-lg-3 ms-auto">
-        <a class="text-reset me-3" href="#">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-        <div class="dropdown">
-          <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-bell"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Some news</a></li>
-            <li><a class="dropdown-item" href="#">Another news</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="my-profile.html" id="profilePic"
-            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img id="avatar" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" alt="Avatar"
-              loading="lazy" />
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profilePic">
-            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-            <li><a class="dropdown-item" href="#">Configuración</a></li>
-            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- FIN DE NAVBAR -->
-
   <main>
     <div class="container">
-      <div class="row">
+      <div class="contenedor-form">
         <div class="col">
-          <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">
+          <div id="myProfile" class="shadow-lg p-3 mb-5 mt-4 bg-body rounded">
             <form class="row g-3 needs-validation" novalidate>
-          <!-- Contenedor de previsualización de la imagen -->
-<div class="mt-3 d-flex justify-content-center">
-<img id="profilePicPreview" src="#" alt="Previsualización de la imagen">
-</div>
+              <!-- Contenedor de previsualización de la imagen -->
+              <div class="mt-3 d-flex justify-content-center">
+                <img id="profilePicPreview" src="#" alt="Previsualización de la imagen">
+              </div>
 
-            
-             
-             
-              <h1 class="mi-perfil" style="text-align: center;">Mi Perfil</h1>
+              <h1 class="mi-perfil">Mi Perfil</h1>
+
+
               <!-- Campo de Nombre -->
-              <div class="col-md-3">
+              <div class="col-md-3 ">
                 <label for="firstName" class="form-label">Nombre*</label>
                 <input type="text" id="firstName" name="firstName" class="form-control" required>
                 <div class="valid-feedback">Nombre válido</div>
@@ -143,24 +73,41 @@
               <div class="col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Guardar cambios</button>
               </div>
+
+              <!-- Botón de Modo Noche / Día estilo toggle (ajustado para estar debajo de Guardar Cambios) -->
+              <div class="col-md-12 text-center mt-3">
+                <div class="wrapper">
+                  <div class="toggle">
+                    <input id="toggle-mode" class="toggle-input" type="checkbox" />
+                    <div class="toggle-bg"></div>
+                    <div class="toggle-switch">
+                      <div class="toggle-switch-figure"></div>
+                      <div class="toggle-switch-figureAlt"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
             </form>
           </div>
         </div>
       </div>
     </div>
   </main>
-
   <!-- Footer -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
 
   <!-- Scripts -->
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>

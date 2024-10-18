@@ -1,82 +1,114 @@
 (function () {
     'use strict';
 
-    // Función para cargar los datos almacenados en localStorage al cargar la página
+    // Función que carga los datos guardados en localStorage al cargar la página
     document.addEventListener('DOMContentLoaded', function () {
-        // Cargar datos de perfil
+        // Obtener el email guardado en localStorage bajo la clave 'currentUser'
+        const email = localStorage.getItem('currentUser');
+
+        // Si el email no está en localStorage, redirige al usuario a la página de login
+        if (!email) {
+            window.location.href = "login.html";
+        } else {
+            // Si hay un email guardado, lo cargamos en el campo correspondiente
+            document.getElementById('email').value = email;
+        }
+
+        // Cargar nombre y apellido si existen en localStorage
         const name = localStorage.getItem('name');
         const lastName = localStorage.getItem('lastName');
-        const email = localStorage.getItem('email');
-        const phone = localStorage.getItem('phone');
-        const profilePic = localStorage.getItem('profilePic');
 
-        // Si los elementos existen en el DOM, actualizar con los valores almacenados
-        if (name) document.getElementById('firstName').value = name;
-        if (lastName) document.getElementById('lastName').value = lastName;
-        if (email) document.getElementById('email').value = email;
-        if (phone) document.getElementById('phone').value = phone;
+        if (name) {
+            document.getElementById('firstName').value = name;
+        }
+        if (lastName) {
+            document.getElementById('lastName').value = lastName;
+        }
 
-        // Actualizar la imagen de perfil en la navbar si existe
+        // Cargar la imagen de perfil si existe
+        const profilePic = localStorage.getItem('profilePic'); 
         const avatarElement = document.getElementById('avatar');
         const previewElement = document.getElementById('profilePicPreview');
+        const avatarNav = document.querySelector('#navbarDropdownMenuAvatar img'); // Avatar de la navbar
+
         if (profilePic) {
             if (avatarElement) avatarElement.src = profilePic;
             if (previewElement) previewElement.src = profilePic;
             previewElement.style.display = 'block'; // Mostrar la imagen guardada
+            if (avatarNav) avatarNav.src = profilePic; // Actualizar avatar en la navbar
+        }
+        
+        // Manejar la vista previa de la imagen seleccionada
+        const profilePicInput = document.getElementById('profilePic');
+        if (profilePicInput) {
+            profilePicInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const previewElement = document.getElementById('profilePicPreview');
+                    if (previewElement) {
+                        previewElement.src = e.target.result;
+                        previewElement.style.display = 'block'; // Mostrar la imagen previsualizada
+                    }
+
+                    // Actualizar el avatar de la navbar con la nueva imagen
+                    if (avatarNav) {
+                        avatarNav.src = e.target.result;
+                    }
+                };
+
+                reader.readAsDataURL(file); // Leer el archivo como URL de datos
+            });
         }
 
-        // Mostrar nombre en la navbar
-        const usernameElement = document.getElementById('username');
-        const usernameSmallElement = document.getElementById('username-small');
-        if (name) {
-            if (usernameElement) usernameElement.textContent = name;
-            if (usernameSmallElement) usernameSmallElement.textContent = name;
-        }
-    });
+        // Obtener todos los formularios a los que queremos aplicarles estilos de validación personalizados de Bootstrap
+        const forms = document.querySelectorAll('.needs-validation');
 
-    // Manejar la vista previa de la imagen seleccionada
-    const profilePicInput = document.getElementById('profilePic');
-    if (profilePicInput) {
-        profilePicInput.addEventListener('change', function (event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
+        // Iterar sobre cada uno de ellos y evitar el envío en caso de ser inválido
+        Array.prototype.forEach.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                // Verificar si el formulario es válido
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    // Si es válido, prevenir el comportamiento por defecto y guardar los datos en localStorage
+                    event.preventDefault();
 
-            reader.onload = function (e) {
-                const previewElement = document.getElementById('profilePicPreview');
-                if (previewElement) {
-                    previewElement.src = e.target.result;
-                    previewElement.style.display = 'block'; // Mostrar la imagen previsualizada
+                    // Obtener los valores de los campos
+                    const name = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    const email = document.getElementById('email').value;
+                    const profilePic = document.getElementById('profilePicPreview').src; // Obtener imagen de perfil
+
+                    // Guardar los datos en localStorage
+                    localStorage.setItem('name', name);
+                    localStorage.setItem('lastName', lastName);
+                    localStorage.setItem('currentUser', email);
+                    localStorage.setItem('profilePic', profilePic); // Guarda la imagen de perfil
+
+                    // Mostrar un mensaje de éxito
+                    alert('¡Sus datos han sido guardados exitosamente!');
                 }
-            };
 
-            if (file) {
-                reader.readAsDataURL(file);
-            }
+                form.classList.add('was-validated');
+            }, false);
         });
-    }
 
-    // Guardar los cambios al enviar el formulario
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+        // Validación en tiempo real de los campos del formulario
+        const inputs = document.querySelectorAll('input');
 
-            // Obtener los valores de los campos del formulario
-            const name = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const profilePic = document.getElementById('profilePicPreview').src;
-
-            // Guardar los datos en localStorage
-            localStorage.setItem('name', name);
-            localStorage.setItem('lastName', lastName);
-            localStorage.setItem('email', email);
-            localStorage.setItem('phone', phone);
-            localStorage.setItem('profilePic', profilePic);
-
-            // Puedes agregar una alerta o algún mensaje de éxito aquí si lo deseas
-            alert('Perfil guardado exitosamente.');
+        inputs.forEach(input => {
+            input.addEventListener('input', function () {
+                if (input.checkValidity()) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
         });
-    }
+    });
 })();
