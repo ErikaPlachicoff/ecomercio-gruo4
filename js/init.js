@@ -223,3 +223,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Cargar nombre y apellido si existen en localStorage
+  const name = localStorage.getItem('name');
+  const lastName = localStorage.getItem('lastName');
+
+  // Elementos con id "username" y "username-small" para mostrar el nombre completo del usuario
+  const usernameElement = document.getElementById('username');
+  const usernameSmallElement = document.getElementById('username-small'); // Elemento para pantallas pequeñas
+
+  // Función para actualizar los elementos con el nombre completo o "Invitado"
+  function updateUsernameDisplay() {
+      if (usernameElement && usernameSmallElement) {
+          if (name && lastName) {
+              const fullName = `${name} ${lastName}`; // Concatenar nombre y apellido
+              // Muestra el nombre completo del usuario en ambos elementos
+              usernameElement.textContent = fullName;
+              usernameSmallElement.textContent = fullName; // Para el menú en pantallas pequeñas
+          } else {
+              // Si no hay nombre y apellido, muestra "Invitado" en ambos elementos
+              usernameElement.textContent = 'Invitado';
+              usernameSmallElement.textContent = 'Invitado';
+          }
+      } else {
+          console.error('Elementos con id "username" o "username-small" no encontrados.');
+      }
+  }
+
+  // Llamar a la función para actualizar los elementos
+  updateUsernameDisplay();
+});
+
+
+
