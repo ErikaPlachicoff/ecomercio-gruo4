@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
    <div class="dropdown">
      <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="my-profile.html"
        id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-       <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Avatar"
+       <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" width="40" alt="Avatar"
          loading="lazy" />
      </a>
      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
