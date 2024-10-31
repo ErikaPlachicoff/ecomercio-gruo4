@@ -8,6 +8,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    
+   
 }
 
 /*COMIENZA ESTILOS DEL CONTENIDO DE LA PÁGINA*/
@@ -40,8 +42,8 @@ body {
 
 .carousel-container {
     position: absolute;
-    top: 0;
-    left: 0;
+    top:0;
+    left:0;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -57,14 +59,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6%;
-    border: none;
+    width: 15%;
+    padding: 0;
     color: #fff;
+    text-align: center;
     background: 0 0;
-    opacity: .3;
-    transition: opacity 15s ease;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
 }
-
 .gradiente {
     position: absolute;
     bottom: 0;
@@ -154,12 +157,11 @@ body {
     content: "";
     display: block;
     position: absolute;
-    right: -1rem;
+    right: 0rem;
     width: 1px;
-    height: 70%;
+    height: 80%;
     background: #fff;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
 }
 
 .flex span {
@@ -198,6 +200,17 @@ body {
 #related-products-container h5 {
     color: rgb(0, 0, 0);
 }
+
+
+.related-product {
+    width: 12.5rem; 
+    margin: 0.625rem;
+    text-align: center;
+    padding-top: 0;
+    
+
+}
+
 
 .related-products h2 {
     display: flex;

@@ -98,20 +98,49 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.location.href = 'product-info.html';
                     });
                 });
+// Constante del boton de compra
+const buyButton = document.getElementById('BComprar');
+    
+// Agrega un evento de click al botón
+buyButton.addEventListener('click', function () {
+    // Esto guarda el producto en localStorage
+    const productToBuy = {
+        id: product.id,
+        name: product.name,
+        cost: product.cost,
+        currency: product.currency,
+        image: product.images[0] //Guarda la primer imagen del producto
+    };
 
+    // Guarda el producto en el localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(productToBuy);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Redirige a cart.html
+    window.location.href = 'cart.html';
+
+    function updateCartCount() {
+        const cartCount = document.getElementById('cart-count');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cartCount.textContent = cart.length;
+    }
+    // Llama a updateCartCount() después de agregar o eliminar productos
+updateCartCount();
+
+});
                    // Llamar a la función para obtener los comentarios del producto actual
                    fetchProductComments(selectedProductId);
-
-                
 
             } else {
                 console.error('Error al obtener el producto:', result.error);
             }
+            
              // Función para obtener los comentarios de un producto según su ID
  function fetchProductComments(productId) {
     const url = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
  
- 
+                    
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -360,3 +389,4 @@ function addCommentToCarousel(comment) {
     }
     return starsHtml;
  }
+ 
