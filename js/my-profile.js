@@ -61,6 +61,7 @@
                 reader.readAsDataURL(file); // Leer el archivo como URL de datos
             });
         }
+        localStorage.setItem('profilePic', profilePic); // Guarda la imagen de perfil
 
         // Obtener todos los formularios a los que queremos aplicarles estilos de validación personalizados de Bootstrap
         const forms = document.querySelectorAll('.needs-validation');
