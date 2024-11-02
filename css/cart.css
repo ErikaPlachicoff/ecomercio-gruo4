@@ -4,6 +4,7 @@
   --color-label: #aaa;
   --font-default: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-bold: 'Helvetica Neue Medium';
+  overflow-x: hidden;
 }
 
 /* Ajustes globales */
@@ -210,3 +211,23 @@ label {
   background-color: #373;
 }
 
+/* Estilos del modal en modo claro (predeterminado) */
+.modal-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+.modal-content label{
+  color: #000000;
+}
+/* Estilos del modal en modo oscuro */
+.dark-mode .modal-content {
+    background-color: #333333;
+    color: #ffffff;
+}
+.send-button-modal{
+  padding-top: 5%;
+}
+
+.dark-mode .modal-content label{
+  color: rgb(216, 216, 216);
+}

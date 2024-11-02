@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const index = event.target.getAttribute('data-index');
                     const product = productCart[index];
                     const linePrice = (quantity * product.cost).toFixed(2);
-                    
+
                     event.target.closest('.product').querySelector('.product-line-price').textContent = `${product.currency} ${linePrice}`;
                     recalculateCart();
                 }
@@ -109,21 +109,49 @@ document.addEventListener('DOMContentLoaded', function () {
             recalculateCart();
         }
     }
+    // Funcionalidad del botón de compra
+    checkoutButton.addEventListener('click', () => {
+        if (productCart.length === 0) {
+            Swal.fire("¡Estoy vacío! <br> Lléname con algo :D ");
+        } else {
+            const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+            purchaseModal.show();
+        }
+    });
+
+    // Envío del formulario de compra
+    document.getElementById('purchaseForm').addEventListener('submit', function (event) {
+        event.preventDefault();// Esto previene el envío del formulario por defecto
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+        // Mostrar la alerta de éxito
+        Swal.fire({
+            title: "Pedido completado!",
+            html: `
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li><strong>Pedido realizado por:</strong> ${name}</li>
+                    <li><strong>Correo:</strong> ${email}</li>
+                    <li><strong>Dirección:</strong> ${address}</li>
+                    <li><strong>Método de Pago:</strong> ${paymentMethod}</li>
+                </ul>`,
+            icon: "success"
+        }).then(() => {
+            // Limpia el carrito después de la compra y actualiza la página
+            localStorage.removeItem('cart');
+            productCart = [];
+            renderCart(); // Llama a renderCart para mostrar que el carrito está vacío
+
+            // Cierra el modal
+            const purchaseModal = bootstrap.Modal.getInstance(document.getElementById('purchaseModal'));
+            if (purchaseModal) {
+                purchaseModal.hide();
+            }
+        });
+    });
 
     // Renderiza el carrito al cargar la página
     renderCart();
-});
-
-// Seleccionar el botón y el contenedor del carrito
-const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
-const cartContainer = document.querySelector('.shopping-cart');
-
-// Manejar el clic en el botón para alternar la clase .dark-mode
-toggleDarkModeButton.addEventListener('click', function () {
-    cartContainer.classList.toggle('dark-mode');
-    
-    // Cambiar el texto del botón según el modo activo
-    toggleDarkModeButton.textContent = 
-        cartContainer.classList.contains('dark-mode') ? 'Modo Día' : 'Modo Noche';
-
 });

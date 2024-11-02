@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Recuperar el ID del producto seleccionado desde localStorage
     const selectedProductId = localStorage.getItem('IDproductSelect');
 
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const PRODUCTS_URL = `https://japceibal.github.io/emercado-api/products/${selectedProductId}.json`;
 
         // Obtener los datos del producto usando el ID
-        getJSONData(PRODUCTS_URL).then(function(result) {
+        getJSONData(PRODUCTS_URL).then(function (result) {
             if (result.status === "ok") {
                 const product = result.data;
 
@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
 
                 // Se agregan dinámicamente en HTML con el id 'product-description'
-                             
+
                 document.getElementById('product-description').appendChild(productDescription);
-                  document.getElementById('product-description').appendChild(productInfo);
-               
+                document.getElementById('product-description').appendChild(productInfo);
+
 
                 // Insertar los productos relacionados como tarjetas
                 const relatedProductsContainer = document.getElementById('related-products-container');
@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     `;
                     relatedProductsContainer.appendChild(relatedProductElement);
-                       // Agregar evento 'click' para cada tarjeta de producto relacionado
-                       relatedProductElement.addEventListener('click', function() {
+                    // Agregar evento 'click' para cada tarjeta de producto relacionado
+                    relatedProductElement.addEventListener('click', function () {
                         // Guardar el ID del producto relacionado en localStorage
                         localStorage.setItem('IDproductSelect', relatedProduct.id);
 
@@ -119,87 +119,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Redirige a cart.html
                     window.location.href = 'cart.html';
+
+                    function updateCartCount() {
+                        const cartCount = document.getElementById('cart-count');
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        cartCount.textContent = cart.length;
+                    }
+
+                    // Llama a updateCartCount() después de agregar o eliminar productos
+                    updateCartCount();
+
                 });
 
 
-// Constante del boton de compra
-const buyButton = document.getElementById('BComprar');
-    
-// Agrega un evento de click al botón
-buyButton.addEventListener('click', function () {
-    // Esto guarda el producto en localStorage
-    const productToBuy = {
-        id: product.id,
-        name: product.name,
-        cost: product.cost,
-        currency: product.currency,
-        image: product.images[0] //Guarda la primer imagen del producto
-    };
-
-    // Guarda el producto en el localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(productToBuy);
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Redirige a cart.html
-    window.location.href = 'cart.html';
-
-    function updateCartCount() {
-        const cartCount = document.getElementById('cart-count');
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cartCount.textContent = cart.length;
-    }
-    // Llama a updateCartCount() después de agregar o eliminar productos
-updateCartCount();
-
-});
-                   // Llamar a la función para obtener los comentarios del producto actual
-                   fetchProductComments(selectedProductId);
+                // Llama a la función para obtener los comentarios del producto actual
+                fetchProductComments(selectedProductId);
 
             } else {
                 console.error('Error al obtener el producto:', result.error);
             }
-            
-             // Función para obtener los comentarios de un producto según su ID
- function fetchProductComments(productId) {
-    const url = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
- 
-                    
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Error al obtener los comentarios del producto");
+            // Función para obtener los comentarios de un producto según su ID
+            function fetchProductComments(productId) {
+                const url = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
+
+
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Error al obtener los comentarios del producto");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(`Comentarios del producto ${productId}:`, data);
+                        displayComments(data); // Llama a una función para mostrar los comentarios
+                    })
+                    .catch(error => {
+                        console.error("Error en la solicitud:", error);
+                    });
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log(`Comentarios del producto ${productId}:`, data);
-            displayComments(data); // Llama a una función para mostrar los comentarios
-        })
-        .catch(error => {
-            console.error("Error en la solicitud:", error);
-        });
- }
- 
- 
- // Función para mostrar los comentarios en el HTML
- function displayComments(comments) {
-    const carouselInner = document.getElementById('carouselInner'); // Usamos el contenedor del carrusel
- 
- 
-    // Limpiar cualquier contenido previo
-    carouselInner.innerHTML = '';
- 
- 
-    // Comprobar si hay comentarios
-    if (comments && comments.length > 0) {
-        comments.forEach((comment, index) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('carousel-item');
-            if (index === 0) itemDiv.classList.add('active'); // La primera reseña será activa
- 
- 
-            itemDiv.innerHTML = `
+
+
+            // Función para mostrar los comentarios en el HTML
+            function displayComments(comments) {
+                const carouselInner = document.getElementById('carouselInner'); // Usamos el contenedor del carrusel
+
+
+                // Limpiar cualquier contenido previo
+                carouselInner.innerHTML = '';
+
+
+                // Comprobar si hay comentarios
+                if (comments && comments.length > 0) {
+                    comments.forEach((comment, index) => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('carousel-item');
+                        if (index === 0) itemDiv.classList.add('active'); // La primera reseña será activa
+
+
+                        itemDiv.innerHTML = `
                 <div class="card1">
                     <div class="card-body">
                     <h2 class="text-white">Reseñas de Usuarios</h2>
@@ -209,44 +187,44 @@ updateCartCount();
                     </div>
                 </div>
             `;
-            carouselInner.appendChild(itemDiv);
-        });
- 
- 
-        // Generar los indicadores del carrusel
-        const carouselIndicators = document.getElementById('carouselIndicators');
-        carouselIndicators.innerHTML = ''; // Limpiar indicadores previos
- 
- 
-        comments.forEach((_, index) => {
-            const indicator = document.createElement('button');
-            indicator.setAttribute('type', 'button');
-            indicator.setAttribute('data-bs-target', '#reviewCarousel');
-            indicator.setAttribute('data-bs-slide-to', index);
-            if (index === 0) indicator.classList.add('active');
-            indicator.classList.add('carousel-indicator');
-            carouselIndicators.appendChild(indicator);
-        });
-    } else {
-        carouselInner.innerHTML = '<p>No hay comentarios disponibles para este producto.</p>';
-    }
- }
- 
- 
- // Función para renderizar estrellas basadas en la puntuación
- function renderStars(score) {
-    let starsHtml = '';
-    for (let i = 1; i <= 5; i++) {
-        if (i <= score) {
-            starsHtml += `<span class="fa fa-star" style="color: yellow;"></span>`;
-        } else {
-            starsHtml += `<span class="fa fa-star-o" style="color: yellow;"></span>`;
-        }
-    }
-    return starsHtml;
- }
-           
-           
+                        carouselInner.appendChild(itemDiv);
+                    });
+
+
+                    // Generar los indicadores del carrusel
+                    const carouselIndicators = document.getElementById('carouselIndicators');
+                    carouselIndicators.innerHTML = ''; // Limpiar indicadores previos
+
+
+                    comments.forEach((_, index) => {
+                        const indicator = document.createElement('button');
+                        indicator.setAttribute('type', 'button');
+                        indicator.setAttribute('data-bs-target', '#reviewCarousel');
+                        indicator.setAttribute('data-bs-slide-to', index);
+                        if (index === 0) indicator.classList.add('active');
+                        indicator.classList.add('carousel-indicator');
+                        carouselIndicators.appendChild(indicator);
+                    });
+                } else {
+                    carouselInner.innerHTML = '<p>No hay comentarios disponibles para este producto.</p>';
+                }
+            }
+
+
+            // Función para renderizar estrellas basadas en la puntuación
+            function renderStars(score) {
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= score) {
+                        starsHtml += `<span class="fa fa-star" style="color: yellow;"></span>`;
+                    } else {
+                        starsHtml += `<span class="fa fa-star-o" style="color: yellow;"></span>`;
+                    }
+                }
+                return starsHtml;
+            }
+
+
         });
     } else {
         console.error('No se encontró ningún ID de producto en localStorage.');
@@ -254,13 +232,13 @@ updateCartCount();
 
 });
 
- 
- 
- // Función para obtener los comentarios de un producto según su ID
- function fetchProductComments(productId) {
+
+
+// Función para obtener los comentarios de un producto según su ID
+function fetchProductComments(productId) {
     const url = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
- 
- 
+
+
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -275,26 +253,26 @@ updateCartCount();
         .catch(error => {
             console.error("Error en la solicitud:", error);
         });
- }
- 
- 
- // Función para mostrar los comentarios en el HTML
- function displayComments(comments) {
+}
+
+
+// Función para mostrar los comentarios en el HTML
+function displayComments(comments) {
     const carouselInner = document.getElementById('carouselInner'); // Usamos el contenedor del carrusel
- 
- 
+
+
     // Limpiar cualquier contenido previo
     carouselInner.innerHTML = '';
- 
- 
+
+
     // Comprobar si hay comentarios
     if (comments && comments.length > 0) {
         comments.forEach((comment, index) => {
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('carousel-item');
             if (index === 0) itemDiv.classList.add('active'); // La primera reseña será activa
- 
- 
+
+
             itemDiv.innerHTML = `
                 <div class="card1">
                     <div class="card-body">
@@ -307,13 +285,13 @@ updateCartCount();
             `;
             carouselInner.appendChild(itemDiv);
         });
- 
- 
+
+
         // Generar los indicadores del carrusel
         const carouselIndicators = document.getElementById('carouselIndicators');
         carouselIndicators.innerHTML = ''; // Limpiar indicadores previos
- 
- 
+
+
         comments.forEach((_, index) => {
             const indicator = document.createElement('button');
             indicator.setAttribute('type', 'button');
@@ -326,12 +304,12 @@ updateCartCount();
     } else {
         carouselInner.innerHTML = '<p>No hay comentarios disponibles para este producto.</p>';
     }
- }
- 
- //Mostrar comentario como una calificacion mas de las referentes al producto
- // Agregar evento al botón "Enviar"
+}
+
+//Mostrar comentario como una calificacion mas de las referentes al producto
+// Agregar evento al botón "Enviar"
 const sendButton = document.querySelector('.btn.btn-primary');
-sendButton.addEventListener('click', function() {
+sendButton.addEventListener('click', function () {
     const rating = document.querySelector('input[name="rating"]:checked');
     const commentText = document.querySelector('textarea').value;
 
@@ -345,7 +323,7 @@ sendButton.addEventListener('click', function() {
             user: user,
             description: commentText,
             score: score,
-            dateTime: new Date().toISOString() 
+            dateTime: new Date().toISOString()
         };
 
         // Agregar el nuevo comentario al carrusel
@@ -386,7 +364,7 @@ function addCommentToCarousel(comment) {
             </div>
         </div>
     `;
-    
+
     carouselInner.appendChild(itemDiv);
 
     // Agregar un nuevo indicador
@@ -400,9 +378,8 @@ function addCommentToCarousel(comment) {
     carouselIndicators.appendChild(indicator);
 }
 
- 
- // Función para renderizar estrellas basadas en la puntuación
- function renderStars(score) {
+// Función para renderizar estrellas basadas en la puntuación
+function renderStars(score) {
     let starsHtml = '';
     for (let i = 1; i <= 5; i++) {
         if (i <= score) {
@@ -412,5 +389,4 @@ function addCommentToCarousel(comment) {
         }
     }
     return starsHtml;
- }
- 
+}
