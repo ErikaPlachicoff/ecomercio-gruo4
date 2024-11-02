@@ -10,6 +10,10 @@
 
 h1 {
   font-weight: 100;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 3em;
+
 }
 
 label {
@@ -18,7 +22,10 @@ label {
 
 .shopping-cart {
   margin-top: 30px;
+
+  background-color: rgb(231, 224, 224);
 }
+
 
 /* Estilo de las columnas */
 .column-labels {
@@ -54,7 +61,10 @@ label {
 }
 
 .product-title {
-  font-family: var(--font-bold);
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+
 }
 
 .product-price,
@@ -71,6 +81,9 @@ label {
 .product-quantity input {
   width: 50px;
   text-align: center;
+
+  color: #333;
+
 }
 
 .product-removal {
@@ -155,3 +168,45 @@ label {
     text-align: left;
   }
 }
+
+
+/* Modo noche para el carrito */
+.dark-mode .shopping-cart {
+  background-color: #333; /* Fondo oscuro */
+}
+
+.dark-mode .column-labels {
+  color: #ddd;
+  border-bottom-color: #555;
+}
+
+.dark-mode .product {
+  border-bottom-color: #555;
+}
+
+.dark-mode .product-title,
+.dark-mode .product-price,
+.dark-mode .product-line-price,
+.dark-mode .product-quantity input,
+.dark-mode .totals .totals-item label,
+.dark-mode .totals .totals-item .totals-value {
+  color: #b1a6a6; /* Texto claro */
+}
+
+
+.dark-mode .remove-product {
+  background-color: #a44; /* Color de botón en modo noche */
+}
+
+.dark-mode .remove-product:hover {
+  background-color: #822;
+}
+
+.dark-mode .checkout {
+  background-color: #494;
+}
+
+.dark-mode .checkout:hover {
+  background-color: #373;
+}
+
