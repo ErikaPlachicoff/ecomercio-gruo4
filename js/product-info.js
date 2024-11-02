@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.location.href = 'product-info.html';
                     });
                 });
+
 // Constante del boton de compra
 const buyButton = document.getElementById('BComprar');
     
