@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartContainer = document.getElementById('cart-container');
 
     // Obtener los productos guardados en localStorage bajo la clave 'cart'
+
     let productCart = JSON.parse(localStorage.getItem('cart')) || [];
 
     function renderCart() {
@@ -124,4 +125,5 @@ toggleDarkModeButton.addEventListener('click', function () {
     // Cambiar el texto del botón según el modo activo
     toggleDarkModeButton.textContent = 
         cartContainer.classList.contains('dark-mode') ? 'Modo Día' : 'Modo Noche';
+
 });

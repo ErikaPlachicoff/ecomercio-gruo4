@@ -10,8 +10,10 @@
 
 h1 {
   font-weight: 100;
+
   font-family: 'Poppins', sans-serif;
   font-size: 3em;
+
 }
 
 label {
@@ -20,6 +22,7 @@ label {
 
 .shopping-cart {
   margin-top: 30px;
+
   background-color: rgb(231, 224, 224);
 }
 
@@ -58,8 +61,10 @@ label {
 }
 
 .product-title {
+
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
+
 }
 
 .product-price,
@@ -76,7 +81,9 @@ label {
 .product-quantity input {
   width: 50px;
   text-align: center;
+
   color: #333;
+
 }
 
 .product-removal {
@@ -162,6 +169,7 @@ label {
   }
 }
 
+
 /* Modo noche para el carrito */
 .dark-mode .shopping-cart {
   background-color: #333; /* Fondo oscuro */
@@ -201,3 +209,4 @@ label {
 .dark-mode .checkout:hover {
   background-color: #373;
 }
+
