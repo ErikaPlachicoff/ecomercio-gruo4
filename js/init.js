@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
  <div class="d-flex align-items-center order-lg-3">
    <a class="text-reset me-3" href="cart.html">
      <i class="fas fa-shopping-cart"></i>
+     <span id="cart-count" class="badge bg-primary">0</span>
    </a>
    <div class="dropdown">
      <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -253,6 +254,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Llamar a la función para actualizar los elementos
   updateUsernameDisplay();
 });
+// Esto es para que el badge del carrito se actualice en todas las páginas.
+document.addEventListener('DOMContentLoaded', function () {
+  const cartCount = document.getElementById('cart-count');
 
+  // Función para actualizar el contador del carrito
+  function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartCount.textContent = cart.length; // Actualiza el conteo del carrito
+  }
 
-
+  // Actualiza el contador del carrito al cargar la página
+  updateCartBadge();
+});

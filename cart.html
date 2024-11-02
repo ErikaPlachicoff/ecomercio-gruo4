@@ -24,6 +24,54 @@
 
     <div class="text-center mt-4">
       <a href="categories.html" class="btn btn-primary">Seguir comprando</a>
+      <button id="checkoutButton" class="btn btn-success">Comprar</button>
+    </div>
+
+    <!-- Modal para comprar -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="purchaseModalLabel">Completa tu compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="purchaseForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Dirección de Envío</label>
+                <input type="text" class="form-control" id="address" required>
+              </div>
+              <div class="mb-3">
+                <label for="contact" class="form-label">Teléfono de Contacto</label>
+                <input type="number" class="form-control" id="contact" required>
+              </div>
+              <div class="mb-3">
+                <label for="paymentMethod" class="form-label">Método de Pago</label>
+                <select class="form-select" id="paymentMethod" required>
+                  <option value="" disabled selected>Selecciona un método de pago</option>
+                  <option value="creditdebitCard">Tarjeta de Débito/Crédito</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bankTransfer">Transferencia Bancaria</option>
+                </select>
+                <div class="send-button-modal">
+                  <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -37,7 +85,7 @@
       </p>
     </div>
   </footer>
-  
+
 
 
   <div id="spinner-wrapper">
@@ -49,6 +97,7 @@
       <div></div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
