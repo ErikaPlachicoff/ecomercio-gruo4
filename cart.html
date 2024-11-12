@@ -38,23 +38,58 @@
           <div class="modal-body">
             <form id="purchaseForm">
               <div class="mb-3">
-                <label for="name" class="form-label">Nombre Completo</label>
+                <label for="name" class="form-label" id="subtitle">Nombre Completo</label>
                 <input type="text" class="form-control" id="name" required>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico</label>
+                <label for="email" class="form-label" id="subtitle">Correo Electrónico</label>
                 <input type="email" class="form-control" id="email" required>
               </div>
               <div class="mb-3">
-                <label for="address" class="form-label">Dirección de Envío</label>
-                <input type="text" class="form-control" id="address" required>
+                <label for="deliveryMethod" class="form-label" id="subtitle">Método de envío</label>
+                <select class="form-select" id="deliveryMethod" required>
+                  <option value="" disabled selected>Selecciona un tipo de envío</option>
+                  <option value="premiumvalue">Premium (2 a 5 días) </option>
+                  <option value="expressvalue">Express (5 a 8 días) </option>
+                  <option value="standardvalue">Standard (12 a 15 días) </option>
+                </select>
+                </div>
+          <!-- Nueva sección con la dirección de envío -->
+          <div class="mb-3">
+            <label class="form-label" id="subtitle">Dirección de Envío</label>
+            <div class="mb-2">
+              <label for="department" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="department" required>
+            </div>
+            <div class="mb-2">
+              <label for="locality" class="form-label">Localidad</label>
+              <input type="text" class="form-control" id="locality" required>
+            </div>
+            <div class="mb-2">
+              <label for="street" class="form-label">Calle</label>
+              <input type="text" class="form-control" id="street" required>
+            </div>
+            <div class="mb-2">
+              <label for="number" class="form-label">N° de puerta </label>
+              <input type="number" class="form-control" id="number" min="0" step="1" required>
+            </div>
+            <div class="mb-2">
+              <label for="esq" class="form-label">Esquina</label>
+              <input type="text" class="form-control" id="esq" required>
+            </div>
+            <div class="mb-2">
+              <label for="generalInfo">Especificaciones:</label>
+              <textarea id="generalInfo" name="generalInfo" rows="4" cols="40" maxlength="300">
+              </textarea> 
+            </div>
+          </div>
+
+              <div class="mb-3">
+                <label for="contact" class="form-label" id="subtitle">Teléfono de Contacto</label>
+                <input type="number" class="form-control" id="contact" min="0" step="1"required>
               </div>
               <div class="mb-3">
-                <label for="contact" class="form-label">Teléfono de Contacto</label>
-                <input type="number" class="form-control" id="contact" required>
-              </div>
-              <div class="mb-3">
-                <label for="paymentMethod" class="form-label">Método de Pago</label>
+                <label for="paymentMethod" class="form-label" id="subtitle">Método de Pago</label>
                 <select class="form-select" id="paymentMethod" required>
                   <option value="" disabled selected>Selecciona un método de pago</option>
                   <option value="creditdebitCard">Tarjeta de Débito/Crédito</option>
@@ -62,7 +97,7 @@
                   <option value="bankTransfer">Transferencia Bancaria</option>
                 </select>
                 <div class="send-button-modal">
-                  <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+                  <button type="submit" class="btn btn-primary">Finalizar Compra</button>
                 </div>
               </div>
             </form>
