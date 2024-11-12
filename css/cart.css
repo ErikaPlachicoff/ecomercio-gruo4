@@ -215,9 +215,14 @@ label {
 .modal-content {
     background-color: #ffffff;
     color: #000000;
+    font-size: 1.2rem;  
+    
 }
 .modal-content label{
-  color: #000000;
+  color: #616161;
+}
+#subtitle{
+  border-bottom:2px solid #000000;
 }
 /* Estilos del modal en modo oscuro */
 .dark-mode .modal-content {
@@ -229,5 +234,32 @@ label {
 }
 
 .dark-mode .modal-content label{
-  color: rgb(216, 216, 216);
+  color: rgb(230, 229, 229);
+}
+.dark-mode #subtitle{
+  color: rgb(230, 229, 229);
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+#subtitle,#purchaseModalLabel{
+  font-size: 1.3rem;           
+  font-weight: bold;
+}
+
+/* Esto es solo para quitar las flechas del input en contacto y también en numero de puerta*/
+#contact::-webkit-outer-spin-button,
+#contact::-webkit-inner-spin-button,
+#number::-webkit-outer-spin-button,
+#number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#contact,
+#number {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+  padding:0;
 }
