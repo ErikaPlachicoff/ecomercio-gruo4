@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
  <!-- Íconos de carrito, notificaciones y menú desplegable de usuario fuera del contenedor colapsable -->
  <div class="d-flex align-items-center order-lg-3">
-   <a class="text-reset me-3" href="#">
+   <a class="text-reset me-3" href="cart.html">
      <i class="fas fa-shopping-cart"></i>
    </a>
    <div class="dropdown">
@@ -90,13 +90,13 @@ document.addEventListener("DOMContentLoaded", function () {
    <div class="dropdown">
      <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="my-profile.html"
        id="navbarDropdownMenuAvatar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-       <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Avatar"
+       <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40" width="40" alt="Avatar"
          loading="lazy" />
      </a>
      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
        <li><a class="dropdown-item" href="#">Configuración</a></li>
-       <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+       <li><a class="dropdown-item" href="login.html" id="logoutLink">Cerrar sesión</a></li>
      </ul>
    </div>
  </div>
@@ -152,6 +152,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* Esto es para que aparezca la imagen actualizada en todas las navbar */
+document.addEventListener('DOMContentLoaded', function () {
+  const avatarNav = document.querySelector('#navbarDropdownMenuAvatar img'); 
+
+  // Carga la imagen de perfil desde el localStorage
+  const profilePic = localStorage.getItem('profilePic');
+
+  if (profilePic && avatarNav) {
+      avatarNav.src = profilePic; /* Y así se actualiza la imagen en todas las navbars */
+  }
+});
+
 /* A partir de aquí está el modo oscuro/claro */
 /* Esto tuve que modificarlo por unos problemas de una clase de bootstrap, para que la agregue o la quite cuando estemos en my profile y no se pierda el estilo alrededor del form*/
 document.addEventListener("DOMContentLoaded", function () {
@@ -198,3 +210,49 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 /* Fin del modo oscuro/claro */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Cerrar sesión - borra el usuario autenticado
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
+      
+      // Borrar información del usuario de localStorage
+      localStorage.removeItem('name');
+      localStorage.removeItem('lastName');
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('profilePic');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Cargar nombre y apellido si existen en localStorage
+  const name = localStorage.getItem('name');
+  const lastName = localStorage.getItem('lastName');
+
+  // Elementos con id "username" y "username-small" para mostrar el nombre completo del usuario
+  const usernameElement = document.getElementById('username');
+  const usernameSmallElement = document.getElementById('username-small'); // Elemento para pantallas pequeñas
+
+  // Función para actualizar los elementos con el nombre completo o "Invitado"
+  function updateUsernameDisplay() {
+      if (usernameElement && usernameSmallElement) {
+          if (name && lastName) {
+              const fullName = `${name} ${lastName}`; // Concatenar nombre y apellido
+              // Muestra el nombre completo del usuario en ambos elementos
+              usernameElement.textContent = fullName;
+              usernameSmallElement.textContent = fullName; // Para el menú en pantallas pequeñas
+          } else {
+              // Si no hay nombre y apellido, muestra "Invitado" en ambos elementos
+              usernameElement.textContent = 'Invitado';
+              usernameSmallElement.textContent = 'Invitado';
+          }
+      } else {
+          console.error('Elementos con id "username" o "username-small" no encontrados.');
+      }
+  }
+
+  // Llamar a la función para actualizar los elementos
+  updateUsernameDisplay();
+});
+
+
+
