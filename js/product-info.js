@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Llama a updateCartCount() después de agregar o eliminar productos
                     updateCartCount();
-
+                    updateCartBadge();
                 });
 
 

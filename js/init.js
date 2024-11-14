@@ -54,9 +54,9 @@ window.addEventListener('DOMContentLoaded', function () {
 // Carga el nombre del usuario cuando el documento esté listo
 document.addEventListener("DOMContentLoaded", function () {
   console.log('DOMContentLoaded ejecutado');
-    // Esto es para la navbar en todas las páginas
+  // Esto es para la navbar en todas las páginas
 
-    const navbar = `
+  const navbar = `
     <!-- INICIO DE NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light">
 <div class="container-fluid">
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- FIN DE NAVBAR -->
 `;
   document.body.insertAdjacentHTML('afterbegin', navbar);
-  
+
   //A partir de aquí, está el localStorage con  el nombre del usuario
   // Recupera el nombre del usuario desde localStorage
   const currentUser = localStorage.getItem('currentUser');
@@ -155,13 +155,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* Esto es para que aparezca la imagen actualizada en todas las navbar */
 document.addEventListener('DOMContentLoaded', function () {
-  const avatarNav = document.querySelector('#navbarDropdownMenuAvatar img'); 
+  const avatarNav = document.querySelector('#navbarDropdownMenuAvatar img');
 
   // Carga la imagen de perfil desde el localStorage
   const profilePic = localStorage.getItem('profilePic');
 
   if (profilePic && avatarNav) {
-      avatarNav.src = profilePic; /* Y así se actualiza la imagen en todas las navbars */
+    avatarNav.src = profilePic; /* Y así se actualiza la imagen en todas las navbars */
   }
 });
 
@@ -197,10 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
       addProfileClasses(); // Agrega las clases para el modo claro
     }
   });
-/*Estas son las funciones para que funcione lo de arriba*/
+  /*Estas son las funciones para que funcione lo de arriba*/
   function removeProfileClasses() {
     if (myProfileElement) {
-      myProfileElement.classList.remove("shadow-lg", "bg-body", "rounded"); 
+      myProfileElement.classList.remove("shadow-lg", "bg-body", "rounded");
     }
   }
 
@@ -212,15 +212,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 /* Fin del modo oscuro/claro */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Cerrar sesión - borra el usuario autenticado
-  document.getElementById('logoutLink').addEventListener('click', function(event) {
-      
-      // Borrar información del usuario de localStorage
-      localStorage.removeItem('name');
-      localStorage.removeItem('lastName');
-      localStorage.removeItem('currentUser');
-      localStorage.removeItem('profilePic');
+  document.getElementById('logoutLink').addEventListener('click', function (event) {
+
+    // Borrar información del usuario de localStorage
+    localStorage.removeItem('name');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('profilePic');
   });
 });
 
@@ -235,20 +235,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Función para actualizar los elementos con el nombre completo o "Invitado"
   function updateUsernameDisplay() {
-      if (usernameElement && usernameSmallElement) {
-          if (name && lastName) {
-              const fullName = `${name} ${lastName}`; // Concatenar nombre y apellido
-              // Muestra el nombre completo del usuario en ambos elementos
-              usernameElement.textContent = fullName;
-              usernameSmallElement.textContent = fullName; // Para el menú en pantallas pequeñas
-          } else {
-              // Si no hay nombre y apellido, muestra "Invitado" en ambos elementos
-              usernameElement.textContent = 'Invitado';
-              usernameSmallElement.textContent = 'Invitado';
-          }
+    if (usernameElement && usernameSmallElement) {
+      if (name && lastName) {
+        const fullName = `${name} ${lastName}`; // Concatenar nombre y apellido
+        // Muestra el nombre completo del usuario en ambos elementos
+        usernameElement.textContent = fullName;
+        usernameSmallElement.textContent = fullName; // Para el menú en pantallas pequeñas
       } else {
-          console.error('Elementos con id "username" o "username-small" no encontrados.');
+        // Si no hay nombre y apellido, muestra "Invitado" en ambos elementos
+        usernameElement.textContent = 'Invitado';
+        usernameSmallElement.textContent = 'Invitado';
       }
+    } else {
+      console.error('Elementos con id "username" o "username-small" no encontrados.');
+    }
   }
 
   // Llamar a la función para actualizar los elementos
@@ -259,9 +259,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartCount = document.getElementById('cart-count');
 
   // Función para actualizar el contador del carrito
-  function updateCartBadge() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cartCount.textContent = cart.length; // Actualiza el conteo del carrito
+  window.updateCartBadge = function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cartCount.textContent = cart.length; // Actualiza el conteo del carrito
   }
 
   // Actualiza el contador del carrito al cargar la página
