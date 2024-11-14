@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     event.target.closest('.product').querySelector('.product-line-price').textContent = `${product.currency} ${linePrice}`;
                     recalculateCart();
                 }
-            });
+            });  updateCartBadge();
 
             // Eliminar producto
             cartBody.addEventListener('click', function (event) {
@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.removeItem('cart');
             productCart = [];
             renderCart(); // Llama a renderCart para mostrar que el carrito está vacío
+            updateCartBadge();
 
             // Cierra el modal
             const purchaseModal = bootstrap.Modal.getInstance(document.getElementById('purchaseModal'));
