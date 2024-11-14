@@ -39,11 +39,11 @@
             <form id="purchaseForm">
               <div class="mb-3">
                 <label for="name" class="form-label" id="subtitle">Nombre Completo</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" required placeholder="Escribe tu nombre completo">
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label" id="subtitle">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" required placeholder="Escribe tu email">
               </div>
               <div class="mb-3">
                 <label for="deliveryMethod" class="form-label" id="subtitle">Método de envío</label>
@@ -59,34 +59,33 @@
             <label class="form-label" id="subtitle">Dirección de Envío</label>
             <div class="mb-2">
               <label for="department" class="form-label">Departamento</label>
-              <input type="text" class="form-control" id="department" required>
+              <input type="text" class="form-control" id="department" required placeholder="Escribe el departamento de residencia">
             </div>
             <div class="mb-2">
               <label for="locality" class="form-label">Localidad</label>
-              <input type="text" class="form-control" id="locality" required>
+              <input type="text" class="form-control" id="locality" required placeholder="Escribe la localidad">
             </div>
             <div class="mb-2">
               <label for="street" class="form-label">Calle</label>
-              <input type="text" class="form-control" id="street" required>
+              <input type="text" class="form-control" id="street" required placeholder="Escribe la calle principal">
             </div>
             <div class="mb-2">
-              <label for="number" class="form-label">N° de puerta </label>
-              <input type="number" class="form-control" id="number" min="0" step="1" required>
+              <label for="number" class="form-label">Nro. </label>
+              <input type="number" class="form-control" id="number" min="0" step="1" required placeholder="Escribe el numero de puerta">
             </div>
             <div class="mb-2">
               <label for="esq" class="form-label">Esquina</label>
-              <input type="text" class="form-control" id="esq" required>
+              <input type="text" class="form-control" id="esq" required placeholder="Escribe la esquina">
             </div>
             <div class="mb-2">
               <label for="generalInfo">Especificaciones:</label>
-              <textarea id="generalInfo" name="generalInfo" rows="4" cols="40" maxlength="300">
-              </textarea> 
+              <textarea id="generalInfo" name="generalInfo" rows="4" cols="40" maxlength="400" placeholder="Brinde más información sobre su dirección aquí"></textarea> 
             </div>
           </div>
 
               <div class="mb-3">
                 <label for="contact" class="form-label" id="subtitle">Teléfono de Contacto</label>
-                <input type="number" class="form-control" id="contact" min="0" step="1"required>
+                <input type="number" class="form-control" id="contact" min="0" step="1"required placeholder="Escriba su numero de teléfono">
               </div>
               <div class="mb-3">
                 <label for="paymentMethod" class="form-label" id="subtitle">Método de Pago</label>
@@ -96,7 +95,7 @@
                   <option value="paypal">PayPal</option>
                   <option value="bankTransfer">Transferencia Bancaria</option>
                 </select>
-                <div class="send-button-modal">
+                <div class="send-button-modal text-end">
                   <button type="submit" class="btn btn-primary">Finalizar Compra</button>
                 </div>
               </div>

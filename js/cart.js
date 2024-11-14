@@ -125,8 +125,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
-        const address = document.getElementById('address').value;
+        const department = document.getElementById('department').value;
+        const locality = document.getElementById('locality').value;
+        const street = document.getElementById('street').value;
+        const number = document.getElementById('number').value;
+        const esq = document.getElementById('esq').value;
         const paymentMethod = document.getElementById('paymentMethod').value;
+
+        // Concatenación de la dirección completa para que aparezca en la alerta
+        const address = `${department}, ${locality}, ${street}, nro. ${number}, esquina ${esq}`;
+    
         // Mostrar la alerta de éxito
         Swal.fire({
             title: "Pedido completado!",
@@ -135,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <li><strong>Pedido realizado por:</strong> ${name}</li>
                     <li><strong>Correo:</strong> ${email}</li>
                     <li><strong>Dirección:</strong> ${address}</li>
+                    <li><strong>Número:</strong>${number}</li>
                     <li><strong>Método de Pago:</strong> ${paymentMethod}</li>
                 </ul>`,
             icon: "success"
