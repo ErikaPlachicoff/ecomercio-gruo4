@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cartContainer.innerHTML = ''; // Limpia el contenido previo
 
         if (productCart.length === 0) {
-              // Si el carrito está vacío, mostrar un mensaje dinámico
+            // Si el carrito está vacío, mostrar un mensaje dinámico
             const emptyCartMessage = document.createElement('div');
             emptyCartMessage.classList.add('col-12', 'text-center');
             emptyCartMessage.innerHTML = `
@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cartContainer.appendChild(tableContainer);
             const tableBody = document.getElementById('cart-table-body');
 
-            // Variables para tasas e impuestos
-            const taxRate = 0.05;
-            const shippingRate = 15.00;
+            
 
             productCart.forEach((product, index) => {
                 const productRow = document.createElement('tr');
@@ -76,16 +74,50 @@ document.addEventListener('DOMContentLoaded', function () {
                     subtotal += parseFloat(linePrice.textContent.replace(/[^\d.-]/g, ''));
                 });
 
-                const tax = subtotal * taxRate;
-                const shipping = subtotal > 0 ? shippingRate : 0;
-                const total = subtotal + tax + shipping;
+                // Obtener el valor del tipo de envío seleccionado
+                const shippingMethod = document.getElementById('deliveryMethod').value;
 
+                // Establecer tarifas de envío basadas en el método seleccionado
+                let shipping = 0;
+                if (shippingMethod === 'premiumvalue') {
+                    shipping = subtotal * 0.15; // Precio para envío Premium
+                } else if (shippingMethod === 'expressvalue') {
+                    shipping = subtotal * 0.07; // Precio para envío Express
+                } else if (shippingMethod === 'standardvalue') {
+                    shipping = subtotal * 0.05; // Precio para envío Standard
+                }
+
+                // Si el envío es 0, verificar si el valor de shippingMethod es válido
+                if (shippingMethod && shipping === 0) {
+                    console.log("No se ha seleccionado un método de envío válido");
+                }
+
+                const total = subtotal + shipping;
+
+                // Actualizar los elementos del HTML con los nuevos valores
                 document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2);
-                document.getElementById('cart-tax').textContent = tax.toFixed(2);
                 document.getElementById('cart-shipping').textContent = shipping.toFixed(2);
                 document.getElementById('cart-total').textContent = total.toFixed(2);
             }
+
+
             // Actualizar cantidad de producto
+            tableBody.addEventListener('click', function (event) {
+                if (event.target.matches('.remove-product')) {
+                    const index = event.target.getAttribute('data-index');
+                    productCart.splice(index, 1); // Elimina el producto del carrito
+                    localStorage.setItem('cart', JSON.stringify(productCart)); // Actualiza localStorage
+                    renderCart(); // Vuelve a renderizar el carrito
+                    recalculateCart(); // Recalcula el total
+                }
+            });
+
+
+            document.getElementById('deliveryMethod').addEventListener('change', function () {
+                recalculateCart();
+            });
+
+
             tableBody.addEventListener('input', function (event) {
                 if (event.target.matches('input[type="number"]')) {
                     const quantity = parseInt(event.target.value) || 0;
@@ -125,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-        // Envío del formulario de compra
+    // Envío del formulario de compra
     document.getElementById('purchaseForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Esto previene el envío del formulario por defecto
 
@@ -137,11 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const number = document.getElementById('number').value;
         const esq = document.getElementById('esq').value;
         const paymentMethod = document.getElementById('paymentMethod').value;
-           // Concatenación de la dirección completa para que aparezca en la alerta
+        // Concatenación de la dirección completa para que aparezca en la alerta
         const address = `${department}, ${locality}, ${street}, nro. ${number}, esquina ${esq}`;
-    
+
         Swal.fire({
-                    // Mostrar la alerta de éxito
+            // Mostrar la alerta de éxito
             title: "Pedido completado!",
             html: `
                 <ul style="list-style-type: none; padding: 0; margin: 0;">
@@ -153,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </ul>`,
             icon: "success"
         }).then(() => {
-           // Limpia el carrito después de la compra y actualiza la página
+            // Limpia el carrito después de la compra y actualiza la página
             localStorage.removeItem('cart');
             productCart = [];
             renderCart(); // Llama a renderCart para mostrar que el carrito está vacío
