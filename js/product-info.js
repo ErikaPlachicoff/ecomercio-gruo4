@@ -316,15 +316,23 @@ sendButton.addEventListener('click', function () {
     // Validar que se haya seleccionado una calificación y se haya escrito un comentario
     if (rating && commentText.trim() !== "") {
         const score = rating.value;
-        //const user = "Usuario Anónimo"; // Aquí se podría obtener el usuario
-
-        // Crear un nuevo comentario
+        const name = localStorage.getItem('name');
+            const lastName = localStorage.getItem('lastName');
+            const email = localStorage.getItem('currentUser');
+            
+            let userDisplayName = "Usuario Anónimo"; 
+            if (name || lastName) {
+                userDisplayName = `${name || ''} ${lastName || ''}`.trim(); // Nombre completo
+            } else if (email) {
+                userDisplayName = email; 
+            }
+            // Crear un nuevo comentario
         const newComment = {
-            user: user,
+            user: userDisplayName,
             description: commentText,
             score: score,
             dateTime: new Date().toISOString()
-        };
+        };
 
         // Agregar el nuevo comentario al carrusel
         addCommentToCarousel(newComment);
