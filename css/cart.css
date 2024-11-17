@@ -265,10 +265,10 @@ textarea {
   padding:0;
 }
 
-#paymentMethod{
-  margin-bottom: 1.5rem;
-}
-
 .dark-mode .table > :not(caption) > * > *{
   color: #cfcdcd;
+}
+
+#paymentMethod{
+  margin-bottom: 1.5rem;
 }
