@@ -115,17 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Vuelve a renderizar el carrito para actualizar los índices
                     renderCart();
                     recalculateCart();
+                    window.updateCartBadge();
                 }
             });
-
-            // Función para actualizar el badge del carrito
-            function updateCartBadge() {
-                const cartBadge = document.getElementById('cart-badge');
-                cartBadge.textContent = productCart.length;
-            }
-
-            recalculateCart();
-            updateCartBadge();
         }
     }
 
