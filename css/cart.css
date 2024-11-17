@@ -264,3 +264,7 @@ textarea {
   resize: none;
   padding:0;
 }
+
+.dark-mode .table > :not(caption) > * > *{
+  color: #cfcdcd;
+}
