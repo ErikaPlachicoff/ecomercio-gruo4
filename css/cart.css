@@ -264,3 +264,7 @@ textarea {
   resize: none;
   padding:0;
 }
+
+#paymentMethod{
+  margin-bottom: 1.5rem;
+}
