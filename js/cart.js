@@ -1,3 +1,37 @@
+ // Función para recalcular y actualizar el total
+ // recalculateCart va primero para que funcione el calculo cuando se abra el modal
+ function recalculateCart() {
+    let subtotal = 0;
+    document.querySelectorAll('.product-line-price').forEach(linePrice => {
+        subtotal += parseFloat(linePrice.textContent.replace(/[^\d.-]/g, ''));
+    });
+
+    // Obtener el valor del tipo de envío seleccionado
+    const shippingMethod = document.getElementById('deliveryMethod').value;
+
+    // Establecer tarifas de envío basadas en el método seleccionado
+    let shipping = 0;
+    if (shippingMethod === 'premiumvalue') {
+        shipping = subtotal * 0.15; // Precio para envío Premium
+    } else if (shippingMethod === 'expressvalue') {
+        shipping = subtotal * 0.07; // Precio para envío Express
+    } else if (shippingMethod === 'standardvalue') {
+        shipping = subtotal * 0.05; // Precio para envío Standard
+    }
+
+    const total = subtotal + shipping;
+
+    // Actualizar los elementos del HTML con los nuevos valores
+    document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2);
+    document.getElementById('cart-shipping').textContent = shipping.toFixed(2);
+    document.getElementById('cart-total').textContent = total.toFixed(2);
+}
+ // Escuchar el cambio en el método de envío
+document.getElementById('deliveryMethod').addEventListener('change', function () {
+recalculateCart();
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const cartContainer = document.getElementById('cart-container');
     let productCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -64,34 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tableBody.appendChild(productRow);
             });
 
-            // Función para recalcular y actualizar el total
-            function recalculateCart() {
-                let subtotal = 0;
-                document.querySelectorAll('.product-line-price').forEach(linePrice => {
-                    subtotal += parseFloat(linePrice.textContent.replace(/[^\d.-]/g, ''));
-                });
-
-                // Obtener el valor del tipo de envío seleccionado
-                const shippingMethod = document.getElementById('deliveryMethod').value;
-
-                // Establecer tarifas de envío basadas en el método seleccionado
-                let shipping = 0;
-                if (shippingMethod === 'premiumvalue') {
-                    shipping = subtotal * 0.15; // Precio para envío Premium
-                } else if (shippingMethod === 'expressvalue') {
-                    shipping = subtotal * 0.07; // Precio para envío Express
-                } else if (shippingMethod === 'standardvalue') {
-                    shipping = subtotal * 0.05; // Precio para envío Standard
-                }
-
-                const total = subtotal + shipping;
-
-                // Actualizar los elementos del HTML con los nuevos valores
-                document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2);
-                document.getElementById('cart-shipping').textContent = shipping.toFixed(2);
-                document.getElementById('cart-total').textContent = total.toFixed(2);
-            }
-
+           
             // Actualizar cantidad de producto
             tableBody.addEventListener('input', function (event) {
                 if (event.target.matches('input[type="number"]')) {
@@ -126,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (productCart.length === 0) {
             Swal.fire("¡Estoy vacío! <br> Lléname con algo :D ");
         } else {
+            recalculateCart();
             const purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
             purchaseModal.show();
         }
