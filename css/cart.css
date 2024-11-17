@@ -267,6 +267,7 @@ textarea {
 
 .dark-mode .table > :not(caption) > * > *{
   color: #cfcdcd;
+}
 
 #paymentMethod{
   margin-bottom: 1.5rem;
