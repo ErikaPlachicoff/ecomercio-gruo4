@@ -22,31 +22,28 @@ document.addEventListener('DOMContentLoaded', function () {
             tableContainer.classList.add('container');
             tableContainer.innerHTML = `
                 <div class="container mt-4">
-        <h2 class="ms-3 ms-md-0">Carrito de Compras</h2>
-        <p class="ms-3 ms-md-0">Revisa los productos agregados:</p>
+                    <h2 class="ms-3 ms-md-0">Carrito de Compras</h2>
+                    <p class="ms-3 ms-md-0">Revisa los productos agregados:</p>
 
-        <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                    <th>Remover</th>
-                </tr>
-            </thead>
-            <tbody id="cart-table-body">
-            </tbody>
-            </table>
-            </div>
-            </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
+                                    <th>Remover</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             `;
-
             cartContainer.appendChild(tableContainer);
             const tableBody = document.getElementById('cart-table-body');
-
-            
 
             productCart.forEach((product, index) => {
                 const productRow = document.createElement('tr');
@@ -87,11 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     shipping = subtotal * 0.05; // Precio para envío Standard
                 }
 
-                // Si el envío es 0, verificar si el valor de shippingMethod es válido
-                if (shippingMethod && shipping === 0) {
-                    console.log("No se ha seleccionado un método de envío válido");
-                }
-
                 const total = subtotal + shipping;
 
                 // Actualizar los elementos del HTML con los nuevos valores
@@ -100,24 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('cart-total').textContent = total.toFixed(2);
             }
 
-
             // Actualizar cantidad de producto
-            tableBody.addEventListener('click', function (event) {
-                if (event.target.matches('.remove-product')) {
-                    const index = event.target.getAttribute('data-index');
-                    productCart.splice(index, 1); // Elimina el producto del carrito
-                    localStorage.setItem('cart', JSON.stringify(productCart)); // Actualiza localStorage
-                    renderCart(); // Vuelve a renderizar el carrito
-                    recalculateCart(); // Recalcula el total
-                }
-            });
-
-
-            document.getElementById('deliveryMethod').addEventListener('change', function () {
-                recalculateCart();
-            });
-
-
             tableBody.addEventListener('input', function (event) {
                 if (event.target.matches('input[type="number"]')) {
                     const quantity = parseInt(event.target.value) || 0;
@@ -129,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     recalculateCart();
                 }
             });
-            updateCartBadge();
 
             // Eliminar producto
             tableBody.addEventListener('click', function (event) {
@@ -144,9 +118,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            // Función para actualizar el badge del carrito
+            function updateCartBadge() {
+                const cartBadge = document.getElementById('cart-badge');
+                cartBadge.textContent = productCart.length;
+            }
+
             recalculateCart();
+            updateCartBadge();
         }
     }
+
     // Funcionalidad del botón de compra
     checkoutButton.addEventListener('click', () => {
         if (productCart.length === 0) {
